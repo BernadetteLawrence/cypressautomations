@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "baseUrl": "./",
+    "types": ["cypress"]
+  },
+  "include": ["cypress/**/*.js"]
+}
