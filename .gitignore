@@ -1,11 +1,28 @@
 /node_modules
 /package-lock.json
+/node_modules
+/package-lock.json
+
 # Ignore all files in CypressAutomation folder
 cypress/e2e/CypressAutomation/*
+
+# Allow FinancialPlanner test in CypressAutomation
+!cypress/e2e/CypressAutomation/FinancialPlanner.cy.js
+
 # Ignore all files in Assign folder
 cypress/e2e/Assign/*
+
 # Ignore specific fixture files
 cypress/fixtures/Logincred.json
 cypress/fixtures/Logindatadriven.json
 cypress/fixtures/profile.json
 cypress/fixtures/users.json
+
+# Allow FinancialPlanner fixture
+!cypress/fixtures/FinancialPlanner.json
+
+# Ignore AugAssign.js
+cypress/PageObjects/AugAssign.js
+
+# Allow FinancialPlanner POM folder
+!cypress/PageObjects/FinancialPlannerPOM/*
