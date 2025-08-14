@@ -11,12 +11,14 @@ cypress/e2e/CypressAutomation/*
 
 # Ignore all files in Assign folder
 cypress/e2e/Assign/*
-
+cypress/e2e/August/**
+cypress/e2e/JavascriptBasic/
 # Ignore specific fixture files
 cypress/fixtures/Logincred.json
 cypress/fixtures/Logindatadriven.json
 cypress/fixtures/profile.json
 cypress/fixtures/users.json
+
 
 # Allow FinancialPlanner fixture
 !cypress/fixtures/FinancialPlanner.json
