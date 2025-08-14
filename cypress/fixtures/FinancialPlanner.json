@@ -1,4 +1,13 @@
 {
+"Login_Url":"https://publicplan.aivante.net/New_FP/Dzee/financial_planner/login",
+"Planner_Url":"https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner",
+"CreatePlan_Url":"https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner#create_new_plan",
+"HealthCareExpenses_Url":"https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner#long_expense_projection",
+"MedicareBundles_Url":"https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner#medicare_bundles",   
+"FundWithInvestment_Url":"https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner#fund_with_investment",
+"LongTermCareExpenses_Url":"https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner#long_term_care_expenses",
+"ReportBuilder_Url":"https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner#pdf_generator_option_page",
+
     "UserID" : "newteamfp@gmail.com",
     "Password": "test",
     "ClientEmail": "newteamfp@gmail.com",
@@ -25,5 +34,4 @@
     "SpouseRetirementAge" : "55",
     "SpouseCurrentZipcode" :"83642",
     "SpouseRetirementZipcode" : "78745"
-   
 }
