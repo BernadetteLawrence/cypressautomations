@@ -427,7 +427,7 @@ it('TC_FP_Personal_25: Client SpouseRetirementZipCode', () => {
     PersonalPage.setSpouseCurrentZipCode("data.SpouseCurrentZipcode");
     PersonalPage.setSpouseRetirementZipCode("data.SpouseRetirementZipcode");
 });
-it.only('TC_FP_Personal_26: Client Medicare', () => {
+it('TC_FP_Personal_26: Client Medicare', () => {
     const PersonalPage = new Personal();
       PersonalPage.setClientEmail("data.ClientEmail");
     PersonalPage.setFirstName("data.FirstName");
