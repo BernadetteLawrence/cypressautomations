@@ -33,5 +33,8 @@
     "SpouseTobaccoUser" : "No",
     "SpouseRetirementAge" : "55",
     "SpouseCurrentZipcode" :"83642",
-    "SpouseRetirementZipcode" : "78745"
+    "SpouseRetirementZipcode" : "78745",
+    
+    "PlantypePrimary" : "Gold | EPO",
+    "PlantypeSpouse" : "Gold | EPO"
 }

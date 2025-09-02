@@ -42,7 +42,7 @@ this.editRetirementAgeEle='#create_new_plan_retirement_age';
 this.editCurrentZipCodeEle='#create_new_plan_current_zip_code';
 this.editRetirementZipCodeEle='#create_new_plan_zip_code';
 //this.editTaxFilingStatusEle="label[for='create_new_tax_filing_individual']";cant edit when plan is in editmode 
-//this.editTaxFilingStatusJointEle="label[for='create_new_tax_filing_jointly']"
+//this.editTaxFilingStatusJointEle="label[for='create_new_tax_filing_jointly']" this is disabled for edit options
 this.editIncludeSpouseEle="#includeSpouse";
 this.editSpouseFirstNameEle='#spousemember_name';
 this.editSpouseLastNameEle='#spousemember_lastname';
