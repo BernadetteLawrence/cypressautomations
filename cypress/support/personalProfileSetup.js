@@ -1,0 +1,29 @@
+export function setPersonalData(PersonalPage, data) {
+  PersonalPage.setClientEmail(data.ClientEmail);
+  PersonalPage.setFirstName(data.FirstName);
+  PersonalPage.setLastName(data.LastName);
+  PersonalPage.setGender(data.Gender);
+  PersonalPage.setMonthofBirth(data.MonthofBirth);
+  PersonalPage.setYearofBirth(data.YearofBirth);
+  PersonalPage.setHealthProfile(data.HealthProfile);
+  PersonalPage.setLifeExpectancy(data.LifeExpectancy);
+  PersonalPage.setTobaccoUser(data.TobaccoUser);
+  PersonalPage.setRetirementAge(data.RetirementAge);
+  PersonalPage.setCurrentZipCode(data.CurrentZipcode);
+  PersonalPage.setRetirementZipCode(data.RetirementZipcode);
+  PersonalPage.setTaxFilingStatus(data.TaxFilingStatus);
+  PersonalPage.clickIncludeSpouse(data.SpouseFirstName);
+  PersonalPage.setSpouseFirstName(data.SpouseFirstName);
+  PersonalPage.setSpouseLastName(data.SpouseLastName);
+  PersonalPage.setSpouseGender(data.SpouseGender);
+  PersonalPage.setSpouseMonthofBirth(data.SpouseMonthofBirth);
+  PersonalPage.setSpouseYearofBirth(data.SpouseYearofBirth);
+  PersonalPage.setSpouseHealthProfile(data.SpouseHealthProfile);
+  PersonalPage.setSpouseLifeExpectancy(data.SpouseLifeExpectancy);
+  PersonalPage.setSpouseTobaccoUser(data.SpouseTobaccoUser);
+  PersonalPage.setSpouseRetirementAge(data.SpouseRetirementAge);
+  PersonalPage.setSpouseCurrentZipCode(data.SpouseCurrentZipcode);
+  PersonalPage.setSpouseRetirementZipCode(data.SpouseRetirementZipcode);
+  PersonalPage.clickMedicare();
+  PersonalPage.setTaxfillingstatusAlert();
+}
