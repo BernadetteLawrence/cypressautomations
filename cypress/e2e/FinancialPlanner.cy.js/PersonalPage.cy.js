@@ -13,7 +13,7 @@ describe('Personal', () => {
             LoginPage.setEMailUserID("data.UserID");
             LoginPage.setPassword("data.Password");
             LoginPage.clickLogin();
-            PlannerPage.clickClient();
+            PlannerPage.setClient();
         })
   }
     beforeEach(() => {
