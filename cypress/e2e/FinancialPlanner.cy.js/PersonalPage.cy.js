@@ -6,7 +6,7 @@ describe('Personal', () => {
     const loginSetup = () => {
         const LoginPage = new Login();
         const PlannerPage = new Planner();
-        
+        //const
         cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner');
         cy.fixture('FinancialPlanner').then((data) => {
 
