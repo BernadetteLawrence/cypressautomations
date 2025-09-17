@@ -24,7 +24,7 @@ PersonalLink='#personal_information_collapsible_div > .ui-collapsible-content > 
     cy.wait(1000)
     }
    clickmedicaretab(medicareTab){
-      cy.get(this.medicareLink)
+      cy.get(this.MedicareLink)
        .should('be.visible')
       .click()
       cy.wait(4000)
@@ -54,13 +54,14 @@ PersonalLink='#personal_information_collapsible_div > .ui-collapsible-content > 
         cy.wait(1000)
 
     }
-    CheckMedicareYearAndAge(MedicareFromYearAndAge, MedicareToYearAndAge) {
+    checkMedicareFromYearAndAge(MedicareFromYearAndAge) {
         cy.get(this.MedicareFromYearAndAge)
-            .should('have.value', MedicareFromYearAndAge)
+        .should('be.visible')
         cy.wait(1000)
-        
-        cy.get(this.MedicareToYearAndAge)
-            .should('have.value', MedicareToYearAndAge)
+    }
+    checkMedicareFromYearAndAge(MedicareFromYearAndAge){
+        cy.get(this.MedicareFromYearAndAge)
+            
             .each(($option, index) => {
                const text = $option.text().trim();
                const value = $option.attr('value');
@@ -70,19 +71,19 @@ PersonalLink='#personal_information_collapsible_div > .ui-collapsible-content > 
         cy.wait(1000)
     }
 
-    selectYearAndLifeExpectancyAge(yearandage){
-        cy.get(this.YearAndLifeExpectancyAge)
+    selectMedicareToYearAndAge(MedicareToYearAndAge){
+        cy.get(this.MedicareToYearAndAge)
         .select('2061    |    91');
         cy.wait(1000)
     }
-    verifymagitiername(magitiernamedisplay){
-        cy.get(this.MAGItier)
+    verifymagitiername(MAGIlabel){
+        cy.get(this.MAGIlabel)
         .should('be.visible')
         cy.wait(1000)
 
     }
- magitieroptiondropdown(magidropdown){
-        cy.get(this.magioption)
+ magitieroptiondropdown(MAGItier){
+        cy.get(this.MAGItier)
                 .each(($option, index) => {
   const text = $option.text().trim();
   const value = $option.attr('value');
@@ -93,8 +94,8 @@ PersonalLink='#personal_information_collapsible_div > .ui-collapsible-content > 
 
   }
 
-LengthOfMagitierOption(magitieroption){
-        cy.get(this.magioption)
+LengthOfMagitierOption(MAGItier){
+        cy.get(this.MAGItier)
        .find('option')
     .should('be.visible')
     .should('have.length', 6 )
@@ -102,7 +103,7 @@ LengthOfMagitierOption(magitieroption){
     }
     chooseMagitierOption(selectOption)
     {
-        cy.get(this.magioption)
+        cy.get(this.MAGItier)
         .select('1')
     .should('have.value', '1')
     cy.wait(1000) 
@@ -110,4 +111,4 @@ LengthOfMagitierOption(magitieroption){
 
 }
 
-export default new Medicare;
+export default Medicare;

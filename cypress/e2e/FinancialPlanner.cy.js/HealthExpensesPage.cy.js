@@ -12,7 +12,7 @@ describe('Personal', () => {
         const plannerPage = new Planner();
         const PersonalPage= new Personal();
         const PreMedicarePage= new PreMedicare();
-        const MedicarePage= new Medicare();
+        const MedicarePage=  Medicare;
         const LongtermCarePage= new Longtermcare();
 
     cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner');
@@ -51,9 +51,14 @@ describe('Personal', () => {
             PersonalPage.clickMedicare(); // will click the Medicare tab
             PersonalPage.setTaxfillingstatusAlert();
             MedicarePage.clickmedicaretab();
-            MedicarePage.checkMedicareFromYearAndAge();
-            MedicarePage.selectMedicareToYearAndAge();
+            MedicarePage.CheckMedicareYearAndAge();
+            MedicarePage.selectYearAndLifeExpectancyAge();
             MedicarePage.chooseMagitierOption();
+            MedicarePage.CheckPartALabel();
+            MedicarePage.CheckPartACheckBox();
+            MedicarePage.SelectSupplementPlanN();
+            MedicarePage.CheckDentalLabel();
+            MedicarePage.CheckDentalCheckBox();
             PreMedicarePage.clickpremedicarepage();
             PreMedicarePage.clickpersonalpage();
             PreMedicarePage.clickpremedicarepage();
@@ -206,4 +211,92 @@ it('TC_FP_HealthExpense_12', () => {     //Summary
         HealthExpensesPage.Taxfilingstatusprimary();
       
 })
+it('TC_FP_HealthExpense_13', () => {     //Spouse
+        const HealthExpensesPage = new HealthExpenses();
+        HealthExpensesPage.verifyviewexpense();
+        HealthExpensesPage.setviewexpenseOptions();
+        HealthExpensesPage.selectviewexpensespouse();
+})
+it('TC_FP_HealthExpense_14', () => {     //verify view expense Spouse
+        const HealthExpensesPage = new HealthExpenses();
+        HealthExpensesPage.verifyviewexpense();
+        HealthExpensesPage.setviewexpenseOptions();
+        HealthExpensesPage.selectviewexpensespouse();
+        HealthExpensesPage.checkspousename();
+})
+it('TC_FP_HealthExpense_15', () => {     ////check presentvalue at retirement Spouse
+        const HealthExpensesPage = new HealthExpenses();
+        HealthExpensesPage.verifyviewexpense();
+        HealthExpensesPage.setviewexpenseOptions();
+        HealthExpensesPage.selectviewexpensespouse();
+        HealthExpensesPage.checkspousename();
+        HealthExpensesPage.checkpresentvalueatretirementspouse();
+})
+it('TC_FP_HealthExpense_16', () => {     //total healthcare expense Spouse
+        const HealthExpensesPage = new HealthExpenses();
+        HealthExpensesPage.verifyviewexpense();
+        HealthExpensesPage.setviewexpenseOptions();
+        HealthExpensesPage.selectviewexpensespouse();
+        HealthExpensesPage.checkspousename();
+        //HealthExpensesPage.checkpresentvalueatretirementspouse();
+        HealthExpensesPage.checktotalhealthcareexpensespouse();
+})
+it('TC_FP_HealthExpense_17', () => {     // //total selected expense Spouse
+        const HealthExpensesPage = new HealthExpenses();
+        HealthExpensesPage.verifyviewexpense();
+        HealthExpensesPage.setviewexpenseOptions();
+        HealthExpensesPage.selectviewexpensespouse();
+        HealthExpensesPage.checkspousename();
+        //HealthExpensesPage.checkpresentvalueatretirementspouse();
+        HealthExpensesPage.checktotalselectedexpensespouse();
+})
+it('TC_FP_HealthExpense_18', () => {     //present value surcharge retirement Spouse
+        const HealthExpensesPage = new HealthExpenses();
+        HealthExpensesPage.verifyviewexpense();
+        HealthExpensesPage.setviewexpenseOptions();
+        HealthExpensesPage.selectviewexpensespouse();
+        HealthExpensesPage.checkspousename();
+        //HealthExpensesPage.checkpresentvalueatretirementspouse();
+        HealthExpensesPage.checkpresentvaluesurchargeretirementspouse();
+})
+it('TC_FP_HealthExpense_19', () => {     //total irmaa surcharge Spouse
+        const HealthExpensesPage = new HealthExpenses();
+        HealthExpensesPage.verifyviewexpense();
+        HealthExpensesPage.setviewexpenseOptions();
+        HealthExpensesPage.selectviewexpensespouse();
+        HealthExpensesPage.checkspousename();
+        //HealthExpensesPage.checkpresentvalueatretirementspouse();
+        HealthExpensesPage.checktotalirmaasurchargespouse();
+})
+it('TC_FP_HealthExpense_20', () => {      //interactive calculations on the graph Spouse
+        const HealthExpensesPage = new HealthExpenses();
+        HealthExpensesPage.verifyviewexpense();
+        HealthExpensesPage.setviewexpenseOptions();
+        HealthExpensesPage.selectviewexpensespouse();
+        HealthExpensesPage.checkspousename();
+        HealthExpensesPage.viewinteractivecalculationsonthegraphspouse();
+        HealthExpensesPage.checkpostretirementpremedicarepremiumspouse();
+        HealthExpensesPage.checkpostretirementpremedicareoutofpocketspouse();
+        HealthExpensesPage.checkmedicarepartaspouse();
+        HealthExpensesPage.checkmedicarepartbspouse();
+        HealthExpensesPage.checkmedicaresupplementplanspouse();
+        HealthExpensesPage.checkmedicarepartdspouse();
+        HealthExpensesPage.checkmedicaredentalspouse();
+})
+it('TC_FP_HealthExpense_21', () => {      //Summary Spouse
+        const HealthExpensesPage = new HealthExpenses();
+        HealthExpensesPage.verifyviewexpense();
+        HealthExpensesPage.setviewexpenseOptions();
+        HealthExpensesPage.selectviewexpensespouse();
+        HealthExpensesPage.checkspousename();
+        HealthExpensesPage.agespouse();
+        HealthExpensesPage.retirementagespouse();
+        HealthExpensesPage.lifeexpectancyspouse();
+        HealthExpensesPage.healthprofilespouse();
+        HealthExpensesPage.retirementyearspouse();
+        HealthExpensesPage.medicareeligibleyearspouse();
+        HealthExpensesPage.supplementspouse();
+        HealthExpensesPage.expectedincomeduringmedicarespouse();
+        HealthExpensesPage.Taxfilingstatusspouse();
+})  
 })
