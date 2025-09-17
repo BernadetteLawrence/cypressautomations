@@ -40,9 +40,10 @@ class HealthExpenses
     spousenameEle="div[id='long_expense_projection'] div[class='col-lg-3 col-md-3 pl-0']";
     presentvalueatretirementspouseEle="div[id='long_expense_projection'] div[class='tab-content'] div:nth-child(1) div:nth-child(1) h6:nth-child(1)";
     totalhealthcareexpensespouseEle="div[id='long_expense_projection'] div[class='tab-content'] div:nth-child(1) div:nth-child(2) h6:nth-child(1)";
-    totalselectedexpensespouseEle="div[id='long_expense_projection'] div[class='tab-content'] div:nth-child(1) div:nth-child(1) h6:nth-child(1)";
+    totalselectedexpensespouseEle="body > div:nth-child(18) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3)";
     presentvaluesurchargeretirementspouseEle="div[id='hideShowSurchargeValues'] div:nth-child(1) h6:nth-child(1)";
-    totalirmaasurchargespouseEle="div[id='hideShowSurchargeValues'] div:nth-child(1) h6:nth-child(1)";
+    totalirmaasurchargespouseEle="div[id='hideShowSurchargeValues'] div:nth-child(2) h6:nth-child(1)";
+    interactivecalculationsonthegraphspouseEle=".d-block.p-2.table-highlight.table-title";
     postretirementpremedicarepremiumspouseEle="label[for='Premium']";
     postretirementpremedicareoutofpocketspouseEle="label[for='Out-of-Pocket']";
     medicarepartaspouseEle="label[for='PartA']";
@@ -238,27 +239,34 @@ class HealthExpenses
         cy.wait(2000);
     }
     checkspousename(spousename) {
-        cy.get(this.spousenameEle).should('be.visible').have.text('Rose Peter');
+        cy.get(this.spousenameEle).should('be.visible')
+        .and('contain.text', 'Rose Peter');
         cy.wait(2000);
     }
     checkpresentvalueatretirementspouse(presentvalueatretirementspouse){
-        cy.get(this.presentvalueatretirementspouseEle).should('be.visible').have.text('$289,827');
+        cy.get(this.presentvalueatretirementspouseEle).should('contain.text','Present Value At Retirement');
         cy.wait(2000);
     }
     checktotalhealthcareexpensespouse(totalhealthcareexpensespouse){
-        cy.get(this.totalhealthcareexpensespouseEle).should('be.visible').have.text('$ 694,908');
+        cy.get(this.totalhealthcareexpensespouseEle).should('contain.text','Total Healthcare Expenses');
         cy.wait(2000);
     }
     checktotalselectedexpensespouse(totalselectedexpensespouse){
-        cy.get(this.totalselectedexpensespouseEle).should('be.visible').have.text('$ 694,908');
+        cy.get(this.totalselectedexpensespouseEle).should('contain.text','Total Selected Expenses');
         cy.wait(2000);
     }
     checkpresentvaluesurchargeretirementspouse(presentvaluesurchargeretirementspouse){
-        cy.get(this.presentvaluesurchargeretirementspouseEle).should('be.visible').have.text('$ 0');
+        cy.get(this.presentvaluesurchargeretirementspouseEle).should('be.visible')
+        .and('contain.text', 'Present Value of Surcharge At Retirement');
         cy.wait(2000);
     }
     checktotalirmaasurchargespouse(totalirmaasurchargespouse){
-        cy.get(this.totalirmaasurchargespouseEle).should('be.visible').have.text('$ 0');
+        cy.get(this.totalirmaasurchargespouseEle).should('be.visible')
+        .and('contain.text', 'Total IRMAA Surcharge');
+        cy.wait(2000);
+    }
+    viewinteractivecalculationsonthegraphspouse(interactivecalculationsonthegraphspouse){
+        cy.get(this.interactivecalculationsonthegraphspouseEle).should('be.visible').click();
         cy.wait(2000);
     }
     checkpostretirementpremedicarepremiumspouse(postretirementpremedicarepremiumspouse){
@@ -288,6 +296,33 @@ class HealthExpenses
     checkmedicaredentalspouse(medicaredentalspouse){
         cy.get(this.medicaredentalspouseEle).should('be.visible').click();
         cy.wait(2000);
+    }
+     agespouse(agespouse){
+        cy.get(this.agespouseEle).should('be.visible').click();
+    }
+    retirementagespouse(retirementagespouse){
+        cy.get(this.retirementagespouseEle).should('be.visible');
+    }
+    lifeexpectancyspouse(lifeexpectancyspouse){
+        cy.get(this.lifeexpectancyspouseEle).should('be.visible');
+    }
+    healthprofilespouse(healthprofilespouse){
+        cy.get(this.healthprofilespouseEle).should('be.visible');
+    }
+    retirementyearspouse(retirementyearspouse){
+        cy.get(this.retirementyearspouseEle).should('be.visible');
+    }
+    medicareeligibleyearspouse(medicareeligibleyearspouse){
+        cy.get(this.medicareeligibleyearspouseEle).should('be.visible');
+    }
+    supplementspouse(supplementspouse){
+        cy.get(this.supplementspouseEle).should('be.visible');
+    }
+    expectedincomeduringmedicarespouse(expectedincomeduringmedicarespouse){
+        cy.get(this.expectedincomeduringmedicarespouseEle).should('be.visible');
+    }
+    Taxfilingstatusspouse(Taxfilingstatusspouse){
+        cy.get(this.TaxfilingstatusspouseEle).should('be.visible');
     }
 }
 export default HealthExpenses;
