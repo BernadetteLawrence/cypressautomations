@@ -457,6 +457,5 @@ it('TC_FP_Personal_26: Client Medicare', () => {
     PersonalPage.clickMedicare();  // will click the Medicare tab
     PersonalPage.setTaxfillingstatusAlert();
 });
+
 });
-
-

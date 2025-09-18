@@ -1,6 +1,7 @@
 import Login from "../../PageObjects/FinancialPlannerPOM/LoginPage";
 import Planner from "../../PageObjects/FinancialPlannerPOM/PlannerPage";
 import Personal from "../../PageObjects/FinancialPlannerPOM/PersonalPage";
+import Medicare from "../../PageObjects/FinancialPlannerPOM/MedicarePage";
 import PreMedicare from "../../PageObjects/FinancialPlannerPOM/PreMedicarePage";
 
 describe('PreMedicare', () => {
@@ -8,6 +9,7 @@ describe('PreMedicare', () => {
         const LoginPage = new Login();
         const PlannerPage = new Planner();
         const PersonalPage = new Personal();
+        const MedicarePage =  Medicare;
 
 
         cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner');
@@ -44,6 +46,10 @@ describe('PreMedicare', () => {
             PersonalPage.setSpouseRetirementZipCode("data.SpouseRetirementZipcode");
             PersonalPage.clickMedicare(); // will click the Medicare tab
             PersonalPage.setTaxfillingstatusAlert();
+            MedicarePage.clickmedicaretab();
+            MedicarePage.CheckMedicareYearAndAge();
+            MedicarePage.selectYearAndLifeExpectancyAge();
+            MedicarePage.chooseMagitierOption();
             // cy.url().should('not.include', '/login');
 
         })

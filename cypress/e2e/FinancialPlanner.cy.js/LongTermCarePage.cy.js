@@ -10,7 +10,7 @@ describe('longtermcare', () => {
         const LoginPage = new Login();
         const PlannerPage = new Planner();
         const PersonalPage = new Personal();
-        const MedicarePage = new Medicare();
+        const MedicarePage =  Medicare;
         const PreMedicarePage = new PreMedicare();
 
 
@@ -49,9 +49,9 @@ describe('longtermcare', () => {
             PersonalPage.clickMedicare(); // will click the Medicare tab
             PersonalPage.setTaxfillingstatusAlert();
             MedicarePage.clickmedicaretab();
-            MedicarePage.checkyearandage();
-            MedicarePage.selectyearandlifeexpectancyvalue();
-            MedicarePage.choosemagitieroption();
+            MedicarePage.CheckMedicareYearAndAge();
+            MedicarePage.selectYearAndLifeExpectancyAge();
+            MedicarePage.chooseMagitierOption();
             PreMedicarePage.clickpremedicarepage();
             PreMedicarePage.clickpersonalpage();
             PreMedicarePage.clickpremedicarepage();
