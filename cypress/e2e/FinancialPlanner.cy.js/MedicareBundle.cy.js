@@ -137,22 +137,22 @@ it('TC_FP_MBundle_09', () =>{                         //spousename display
     Medicarebundlepage.verifyspousename();
 
 })
-it('TC_FP_MBundle_10', () =>{                         //spousename display
+it('TC_FP_MBundle_10', () =>{                         //executing all rows primary
     const Medicarebundlepage = new Medicarebundle;
     Medicarebundlepage.eachrowsexecuting();
 
 })
-it('TC_FP_MBundle_11', () =>{                         //spousename display
+it('TC_FP_MBundle_11', () =>{                         //spouse rows and col
     const Medicarebundlepage = new Medicarebundle;
     Medicarebundlepage.verifyspouserowsandcolumn();
 
 })
-it('TC_FP_MBundle_12', () =>{                         //spousename display
+it('TC_FP_MBundle_12', () =>{                         //spouse rows
     const Medicarebundlepage = new Medicarebundle;
     Medicarebundlepage.verifyspousenoofrows();
 
 })
-it('TC_FP_MBundle_13', () =>{                         //spousename display
+it('TC_FP_MBundle_13', () =>{                         //executing all rows spouse
     const Medicarebundlepage = new Medicarebundle;
     Medicarebundlepage.spouseallrowsdisplay();
 
