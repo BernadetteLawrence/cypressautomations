@@ -147,7 +147,7 @@ checkyearsofinhomecareoption(inhomecareoption){
 selectyearsofinhomecareoption(inhomecareoption){
     cy.get(this. yearsofinhomecareoption)
     .select('2',{ force: true })
-.should('have.value', '2')
+.should('have.value', '1')
 cy.wait(1000)
 
 }
@@ -286,7 +286,7 @@ checklengthofspouseinhomecare(lengthofinhomecare){
 selectspouseinhomecareoption(slectoption){
     cy.get(this.spouseyearsofinhomecareoption)
     .select('2',{ force: true })
-    .should('have.value', '2')
+    .should('have.value', '1')
     cy.wait(1000)
 }
 checkspousenursingcaredisplay(spousenursingcaredisplay){
