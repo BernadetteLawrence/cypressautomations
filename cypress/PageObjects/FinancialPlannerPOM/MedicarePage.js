@@ -1,3 +1,4 @@
+
 class Medicare{
 
     constructor() {
@@ -17,8 +18,8 @@ class Medicare{
 
         this.PersonalLink = '#personal_information_collapsible_div > .ui-collapsible-content > .nav-link';
 
-        this.PartALabel = 'div.col-lg-5 > :nth-child(5) > .card-header'; //Part A(Hospital)
-        this.PartACheckBox = 'div.col-lg-5 > :nth-child(5) > .card-body > .row > :nth-child(1) > .md-checkbox > .pl-30';
+        this.PartALabel = 'div.col-lg-5 > :nth-child(5) > .card-header'; //Part A(Hospital)//spouseplan_information_part_a_checkbox
+        this.PartACheckBox = 'div.col-lg-5 > :nth-child(5) > .card-body > .row > :nth-child(1) > .md-checkbox > .pl-30';//
         this.MonthlyPremiumforA = '#plan_information_part_a_monthly_premium';//Monthly Premium $518
 
        this.PartBLabel='div.col-lg-5 > :nth-child(6) > .card-header';//Part B (Doctor)
@@ -29,19 +30,22 @@ class Medicare{
        this.PartDCheckBox = 'div.col-lg-5 > :nth-child(7) > .card-header > .md-checkbox';
        this.MonthlyPremiumforD = '#plan_information_part_d_collapsible > .ui-collapsible-content > .col-lg-12 > :nth-child(1)';//Monthly Premium $36  
       this.AnnualOOPCostForD='#plan_information_part_d_collapsible > .ui-collapsible-content > .col-lg-12 > :nth-child(2)';//Annual OOP Cost $848
+      
       this.NoMediGap="#plan_information_medicare_select";
       this.SupplementPlanLabel='div.col-lg-5 > :nth-child(8) > .card-body';//Supplement Plan (Medigap)
       this.SupplementPlanDropDown = '[name="plan_information_medicare_select"]'
+      
       this.MedigapPlanG="#plan_information_medicare_select";//Select Medicare Plan G
       this.MonthlyPremiumforSupplementPlanG = "div[class='col-lg-8 plan_information_medigap_supplement_div'] div:nth-child(1)";//Monthly Premium $111
 
       this.MedigapPlanN='[name="plan_information_medicare_select"]';//Medigap Plan N
       this.PlanNMonthlyPremium='.card-body > .row > .col-lg-8 > div';//Monthly Premium $88
+
       this.DentalLabel='div.col-lg-5 > :nth-child(9) > .card-header';//Dental
       this.DentalCheckBox = 'div.col-lg-5 > :nth-child(9) > .card-header > .md-checkbox > label';     //Dental CheckBox 
       this.DentalDropDown='[name="plan_information_dental_health_grade_select"]';
 
-      this.GoodDental='[name="plan_information_dental_health_grade_select"]';//Good
+     this.GoodDental='[name="plan_information_dental_health_grade_select"]';//Good
 
       this.DentalMonthlyPremium='#plan_information_dental_collapsible > .ui-collapsible-content > .row > .col-lg-12 > :nth-child(2)';//Monthly Premium $55
       this.DentalCoInsurance='#plan_information_dental_collapsible > .ui-collapsible-content > .row > .col-lg-12 > :nth-child(3)';//Co-Insurance 30%
@@ -50,18 +54,50 @@ class Medicare{
     //Css locators for spouse
     this.SpouseLabel='#plan_information_form > :nth-child(1) > .offset-lg-1 > .sub-title';
     this.SpouseName='#plan_information_form > :nth-child(1) > .offset-lg-1 > .spouseNameset';
-    this.MedicareFromYearAndAgeSpouse='[name="fromYearSpouse0"]';
-    this.MedicareToYearAndAgeSpouse='[name="toYearSpouse0"]';
- 
+    this.MedicareFromYearAndAgeSpouse='#fromYearSpouse0';
+    this.MedicareToYearAndAgeSpouse='#toYearSpouse0';
+
     this.MAGIlabelSpouse='#spouseplan_information_expected_income_during_medicare';
     this.MAGItierSpouse='#spouseplan_information_expected_income_during_medicare';
 
     this.SpouseLabelA='#plan_information_form > :nth-child(1) > .offset-lg-1 > :nth-child(5) > .card-header'; //Part A(Hospital)//spouseplan_information_part_a_checkbox
     this.SpousePartACheckBox='.offset-lg-1 > :nth-child(5) > .card-header > .md-checkbox > .dzee_sec_label';
-    
-      
-    }
 
+    this.PartBforSpouseLabel='#plan_information_form > :nth-child(1) > .offset-lg-1 > :nth-child(6) > .card-header'; //Part B(Doctor)
+    this.PartBCheckBoxSpouse='.offset-lg-1 > :nth-child(6) > .card-header > .md-checkbox > label';
+    this.MonthlyPremiumforBSpouse='#spouseplan_information_part_b_collapsible > .col-lg-12 > .pt-pb-5';
+
+    this.PartDLabelSpouse='#plan_information_form > :nth-child(1) > .offset-lg-1 > :nth-child(7) > .card-header'; //Part D(Drug)
+    this.PartDCheckBoxSpouse='.offset-lg-1 > :nth-child(7) > .card-header > .md-checkbox > label';
+    this.MonthlyPremiumforDSpouse='#spouseplan_information_part_d_collapsible > .ui-collapsible-content > .col-lg-12 > :nth-child(1)';//Monthly Premium $36
+    this.AnnualOOPCostForDSpouse='#spouseplan_information_part_d_collapsible > .ui-collapsible-content > .col-lg-12 > :nth-child(2)';//Annual OOP Cost $848
+
+
+
+
+    this.NoMediGapSpouse="#spouseplan_information_medicare_select";
+      this.SupplementPlanLabelSpouse='.offset-lg-1 > :nth-child(8) > .card-body > .row > .line-space-md';//Supplemental Coverage label
+      this.SupplementPlanDropDownSpouse = '[name="spouseplan_information_medicare_select"]';
+
+      this.MedigapPlanGSpouse="#spouseplan_information_medicare_select";//Select Medicare Plan G
+      this.MonthlyPremiumforSupplementPlanGSpouse ='.spouseplan_information_medigap_supplement_div > div';//Monthly Premium $111
+
+       this.MedigapPlanNSpouse='[name="spouseplan_information_medicare_select"]';//Medigap Plan N
+      this.PlanNMonthlyPremiumSpouse='.spouseplan_information_medigap_supplement_div > div';//Monthly Premium $88
+
+//Dental For Spouse
+     this.DentalLabelSpouse='.offset-lg-1 > :nth-child(9) > .card-header';//Dental
+      this.DentalCheckBoxSpouse = '.offset-lg-1 > :nth-child(9) > .card-header > .md-checkbox > label';     //Dental CheckBox 
+      this.DentalDropDownSpouse='[name="spouseplan_information_dental_health_grade_select"]';
+
+     this.GoodDentalSpouse='[name="spouseplan_information_dental_health_grade_select"]';//Good dental profile
+
+      this.DentalMonthlyPremiumSpouse='#spouseplan_information_dental_collapsible > .ui-collapsible-content > .row > .col-lg-12 > :nth-child(2)';//Monthly Premium $55
+      this.DentalCoInsuranceSpouse='#spouseplan_information_dental_collapsible > .ui-collapsible-content > .row > .col-lg-12 > :nth-child(3)';//Co-Insurance 30%
+      this.DentalAnnualMaxSpouse='#spouseplan_information_dental_collapsible > .ui-collapsible-content > .row > .col-lg-12 > :nth-child(4)';//Annual Max $1,300
+
+
+}
     PersonalClick(personalTab){
       cy.get(this.PersonalLink)
     .click()
@@ -83,7 +119,6 @@ class Medicare{
     
    CheckTaxFilingPrimary(taxfilingprimary){
       cy.get(this.TaxFilingStatusTag)
-      //.should('be.visible')
       cy.wait(1000)
   }
 
@@ -126,7 +161,8 @@ class Medicare{
         .select('2061    |    91');
         cy.wait(1000)
     }
-    verifymagitiername(magitiernamedisplay){
+
+   verifymagitiername(magitiernamedisplay){
         cy.get(this.MAGIlabel)
         .should('exist')
         cy.wait(1000)
@@ -151,6 +187,7 @@ LengthOfMagitierOption(magitieroption){
     .should('have.length', 6 )
     cy.wait(1000) 
     }
+    
     chooseMagitierOption(selectOption)
     {
         cy.get(this.MAGItier)
@@ -159,12 +196,6 @@ LengthOfMagitierOption(magitieroption){
     cy.wait(1000) 
     } 
 
-/*getElements() {
-    return cy.get('.list > li'); // Selector for multiple elements
-  }
-  clickElement(index) {
-    this.getElements().eq(index).click(); // Click a specific element by index
-  }*/
 
   CheckPartALabel(partAlabel){
     cy.get(this.PartALabel)
@@ -249,14 +280,14 @@ selectNoMedigapOption(NoMedigapOption){
   .should('have.text', 'No Medigap / Medicare Advantage');
         }
 
-        SelectSupplementPlanG(selectSupplementPlanG){
-            cy.get(this.MedigapPlanG)
-            .scrollIntoView()
-  .should('be.enabled')
-  .select('Medigap (Plan G)', { force: true })
-  .find('option:selected')
-  .should('have.text', 'Medigap (Plan G)');
-        }
+    SelectSupplementPlanG(selectSupplementPlanG){
+    cy.get(this.MedigapPlanG)
+    .scrollIntoView()
+    .should('be.enabled')
+    .select('Medigap (Plan G)', { force: true })
+    .find('option:selected')
+    .should('have.text', 'Medigap (Plan G)');
+     }
       
         viewMonthlyPremiumforSupplementPlanGDisplay(monthlypremiumforSupplementPlanG){
             cy.get(this.MonthlyPremiumforSupplementPlanG).should('exist');
@@ -279,7 +310,9 @@ selectNoMedigapOption(NoMedigapOption){
             cy.get(this.MonthlyPremiumforSupplementPlanG).should('contain.text', 'Monthly Premium -   $ 88');
             cy.wait(1000);
         }
-     CheckDentalLabel(dentalLabel){
+
+      
+        CheckDentalLabel(dentalLabel){
             cy.get(this.DentalLabel)
             .should('exist');
             cy.wait(1000)
@@ -331,7 +364,7 @@ selectNoMedigapOption(NoMedigapOption){
         // checking For Spouse
 
 
-        CheckSpouseLabel(spouseLabel){
+      CheckSpouseLabel(spouseLabel){
             cy.get(this.SpouseLabel)
             .should('be.visible')
             cy.wait(1000)
@@ -343,11 +376,13 @@ selectNoMedigapOption(NoMedigapOption){
         cy.wait(1000)
 
     }
-    CheckMedicareYearAndAgeSpouse(MedicareFromYearAndAgeSpouse, MedicareToYearAndAgeSpouse) {
+
+     CheckMedicareYearAndAgeSpouse(MedicareFromYearAndAge, MedicareToYearAndAge) {
         cy.get(this.MedicareFromYearAndAgeSpouse)
             .should('be.visible')
         cy.wait(1000)
-        cy.get(this.MedicareToYearAndAge)
+
+        cy.get(this.MedicareToYearAndAgeSpouse)
             .should('be.visible')
             .each(($option, index) => {
                const text = $option.text().trim();
@@ -355,14 +390,22 @@ selectNoMedigapOption(NoMedigapOption){
                cy.log(`Option ${index + 1}: ${text} (value=${value})`);
                console.log(`Option ${index + 1}: ${text} (value=${value})`);
                });
-        cy.wait(1000)   
+        cy.wait(1000);
     }
-    verifymagitiernameSpouse(magitiernamedisplaySpouse){
+
+    selectYearAndLifeExpectancyAgeSpouse(yearandage){
+        cy.get(this.MedicareToYearAndAgeSpouse)
+        .select('2065    |    93');
+        cy.wait(1000)
+    }
+
+ verifymagitiernameSpouse(magitiernamedisplaySpouse){
         cy.get(this.MAGIlabelSpouse)
         .should('exist')
         cy.wait(1000)   
     }
 
+  
     LengthOfMagitierOptionSpouse(magitieroption){
         cy.get(this.MAGItierSpouse)
        .find('option')
@@ -425,7 +468,165 @@ selectNoMedigapOption(NoMedigapOption){
     cy.get(this.SpousePartACheckBox).should('contain.text', '');
     cy.wait(1000)
   }
+   MonthlyPremiumforADisplaySpouse(monthlypremiumforA){
+        cy.get(this.SpousePartACheckBox).click({ force: true });
+        cy.get(this.SpousePartACheckBox).should('exist').and('contain.text', '');
+    cy.wait(1000)
+    }
+
+   CheckPartBLabelSpouse(partBLabel){
+        cy.get(this.PartBforSpouseLabel)
+        .should('be.visible');
+        
+      } 
+
+      CheckPartBCheckBoxSpouse(partBcheckbox){
+        cy.get(this.PartBCheckBoxSpouse).click({ force: true });
+        
+      } 
+
+      MonthlyPremiumforBDisplaySpouse(monthlypremiumforB){
+            cy.get(this.PartBCheckBoxSpouse).click({ force: true });
+           cy.get(this.PartBCheckBoxSpouse).should('exist');
+           cy.get(this.MonthlyPremiumforBSpouse).should('exist');
+           cy.get(this.MonthlyPremiumforBSpouse).should('contain.text',  'Monthly Premium -   $ 185');
+        cy.wait(1000)
+        } 
+
+
+        CheckPartDLabelSpouse(partDLabel){
+            cy.get(this.PartDLabelSpouse)
+            .should('exist');
+            cy.wait(1000)
+        }
+
+        CheckPartDCheckBoxSpouse(partDcheckbox){
+            cy.get(this.PartDCheckBoxSpouse).click({ force: true });
+            cy.wait(1000)
+        }
+
+        MonthlyPremiumforDDisplaySpouse(monthlypremiumforD){
+            cy.get(this.PartDCheckBoxSpouse).click({ force: true });
+            cy.get(this.PartDCheckBoxSpouse).should('exist');
+            cy.get(this.MonthlyPremiumforDSpouse).should('exist');
+            cy.get(this.MonthlyPremiumforDSpouse).should('contain.text', 'Monthly Premium -   $ 36');
+            cy.wait(1000)
+        }
+
+        AnnualOOPCostForDDisplaySpouse(annualOOPCostForD){
+            cy.get(this.AnnualOOPCostForD).should('exist');
+            cy.get(this.AnnualOOPCostForD).should('contain.text', 'Annual Out of Pocket -   $ 848');
+            cy.wait(1000)
+        }
+
+
+        ///supplement plan spouse
+        CheckSupplementPlanLabelSpouse(supplementPlanLabel){
+            cy.get(this.SupplementPlanLabelSpouse)
+            .should('exist');
+            cy.wait(1000)
+        }   
+        clickSupplementPlanDropDownSpouse(supplementPlanDropDown){
+            cy.get(this.SupplementPlanDropDownSpouse).should('be.visible').within(() => {
+             cy.get('option').should('contain', 'No Medigap / Medicare Advantage');
+             cy.get('option').should('contain', 'Medigap (Plan G)');
+             cy.get('option').should('contain', 'Medigap (Plan N)');
+             cy.wait(2000);
+  });
+};
+selectNoMedigapOptionSpouse(NoMedigapOption){
+  cy.get(this.NoMediGapSpouse).scrollIntoView()
+  .should('be.enabled')
+  .select('No Medigap / Medicare Advantage', { force: true })
+  .find('option:selected')
+  .should('have.text', 'No Medigap / Medicare Advantage');
+        }
+
+    SelectSupplementPlanGSpouse(selectSupplementPlanG){
+    cy.get(this.MedigapPlanGSpouse)
+    .scrollIntoView()
+    .should('be.enabled')
+    .select('Medigap (Plan G)', { force: true })
+    .find('option:selected')
+    .should('have.text', 'Medigap (Plan G)');
+     }
+
+        viewMonthlyPremiumforSupplementPlanGDisplaySpouse(monthlypremiumforSupplementPlanG){
+            cy.get(this.MonthlyPremiumforSupplementPlanGSpouse).should('exist');
+            cy.get(this.MonthlyPremiumforSupplementPlanGSpouse).should('contain.text', 'Monthly Premium -   $ 111');
+            cy.wait(1000);
+           
+        } 
+
+
+        //plan N spouse
+         SelectSupplementPlanNSpouse(selectSupplementPlanN){
+            cy.get(this.MedigapPlanNSpouse)
+            .scrollIntoView()
+  .should('be.enabled')
+  .select('Medigap (Plan N)', { force: true })
+  .find('option:selected')
+  .should('have.text', 'Medigap (Plan N)');
+        }
+
+        MonthlyPremiumforSupplementPlanNDisplaySpouse(monthlypremiumforSupplementPlanN){
+          cy.get(this.PlanNMonthlyPremiumSpouse).should('exist');
+            cy.get(this.PlanNMonthlyPremiumSpouse).should('contain.text', 'Monthly Premium -   $ 88');
+            cy.wait(1000);
+        }
+
+        //Dental For Spouse
+
+         CheckDentalLabelSpouse(dentalLabel){
+            cy.get(this.DentalLabelSpouse)
+            .should('exist');
+            cy.wait(1000)
+        }
+
+        CheckDentalCheckBoxSpouse(dentalCheckBox){
+            cy.get(this.DentalCheckBoxSpouse).click({ force: true });
+            cy.wait(1000)
+        }   
+
+         clickDentalDropDownSpouse(dentalDropDown){
+
+            cy.get('[id="spouseplan_information_dental_health_grade_select"]').scrollIntoView()
+              .within(() => {
+                  cy.get('option').should('contain', 'Good');
+                  cy.get('option').should('contain', 'Average');
+                  cy.get('option').should('contain', 'Poor');
+                  cy.wait(2000);
+              });
+
+            }
+
+   SelectDentalProfileSpouse(selectDentalProfile){
+    cy.get(this.GoodDentalSpouse)
+    .scrollIntoView()
+    .should('be.enabled')
+    .select('Good', { force: true })
+    .find('option:selected')
+    .should('have.text', 'Good');
+     }
+
+        viewMonthlyPremiumforDentalSpouse(monthlypremiumforDental){
+            cy.get(this.DentalMonthlyPremiumSpouse).should('exist');
+            cy.get(this.DentalMonthlyPremiumSpouse).should('contain.text', 'Monthly premium -   $ 55');
+            cy.wait(1000);
+           
+        } 
+        viewCoInsuranceforDentalSpouse(coInsuranceforDental){
+            cy.get(this.DentalCoInsuranceSpouse).should('exist');
+            cy.get(this.DentalCoInsuranceSpouse).should('contain.text', 'Co-insurance-   30 %');
+            cy.wait(1000);  
+        }
+        viewAnnualMaxforDentalSpouse(annualMaxforDental){
+            cy.get(this.DentalAnnualMaxSpouse).should('exist');
+            cy.get(this.DentalAnnualMaxSpouse).should('contain.text', 'Annual Maximum-   $ 1,300');
+            cy.wait(1000);
+        }
+
 }
 
 
-export default new Medicare();
+export default  new Medicare();
