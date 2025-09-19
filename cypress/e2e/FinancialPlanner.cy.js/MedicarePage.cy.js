@@ -1,7 +1,7 @@
 import Login from "../../PageObjects/FinancialPlannerPOM/LoginPage";
 import Planner from "../../PageObjects/FinancialPlannerPOM/PlannerPage";
 import Personal from "../../PageObjects/FinancialPlannerPOM/PersonalPage";
-import Medicare from "../../PageObjects/FinancialPlannerPOM/Medicare";
+import Medicare from "../../PageObjects/FinancialPlannerPOM/MedicarePage";
 
 describe('Medicare', () => {
     const loginSetup = () => {
@@ -362,12 +362,12 @@ it('TC_FP_MEDI_42', () => {  //Spouse Part A label and checkbox display
     Medicare.CheckSpousePartACheckBox();
 })
 
-it.only('TC_FP_MEDI_43', () => {  //Monthly premium for A display
+it('TC_FP_MEDI_43', () => {  //Monthly premium for A display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.MonthlyPremiumforADisplaySpouse(); 
 });
-it.only('TC_FP_MEDI_44', () => {  //Spouse Part B label and checkbox display
+it('TC_FP_MEDI_44', () => {  //Spouse Part B label and checkbox display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckPartBLabelSpouse();
