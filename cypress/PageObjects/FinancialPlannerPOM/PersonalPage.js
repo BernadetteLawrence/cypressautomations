@@ -198,7 +198,7 @@ cy.wait(2000);
 setTaxfillingstatusAlert(TaxfillingstatusAlert)
 {
 cy.contains('Tax filling status cannot be changed').should('be.visible');
-cy.get(this.TaxfillingstatusAlertEle).should('be.visible').click();
+cy.get(this.TaxfillingstatusAlertEle).should('be.visible').click({ force: true });
 cy.wait(4000);
 }
 }

@@ -23,7 +23,7 @@ class fundwithinvestment {
   ActiveFundWithInvestmentEle =
     '//a[@class="nav-link ui-link active" and @href="#FundWithInvestment"]';
   FundWithInvestmentEle = 'a[href="#FundWithInvestment"]';
-
+FundWithInvestmentlinkEle=" a[class='nav-link ui-link active']";
   clickHealthcareExpensesEle(HealthcareExpenses) {
     cy.get(this.HealthcareExpensesEle).first().click();
     cy.wait(4000);
@@ -54,10 +54,10 @@ class fundwithinvestment {
       .click();
     cy.wait(5000);
   }
-  fundWithInvestmentClick() {
+  fundWithInvestmentlinkClick() {
     //cy.wait(5000);
-    cy.xpath(this.ActiveFundWithInvestmentEle).should("be.visible").click();
-    cy.get(this.FundWithInvestmentEle).first().should("be.visible").click();
+    //cy.xpath(this.ActiveFundWithInvestmentEle).should("be.visible").click();
+    cy.get(this.FundWithInvestmentlinkEle).first().should("be.visible").click();
 
     //.should(($el) => {
     //expect($el).not.to.have.class("disabledAnchorTag").first().click();

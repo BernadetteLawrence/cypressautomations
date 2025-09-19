@@ -4,11 +4,12 @@ import Personal from "../../PageObjects/FinancialPlannerPOM/PersonalPage";
 import Medicare from "../../PageObjects/FinancialPlannerPOM/MedicarePage";
 import PreMedicare from "../../PageObjects/FinancialPlannerPOM/PreMedicarePage";
 import Longtermcare from "../../PageObjects/FinancialPlannerPOM/LongTermCarePage"; 
-import Healthexpenses from "../../PageObjects/FinancialPlannerPOM/HealthExpensesPage";
+import HealthExpenses from "../../PageObjects/FinancialPlannerPOM/HealthExpensesPage";
 import Medicarebundle from "../../PageObjects/FinancialPlannerPOM/MedicareBundlePage";
+import fundwithinvestment from "../../PageObjects/FinancialPlannerPOM/fundwithinvestmentPage";
+import LongTermCareExpenses from "../../PageObjects/FinancialPlannerPOM/LongTermCareExpenses";
 
-
-describe('Medicarebundle', () => {
+describe('LongTermCareExpenses', () => {
     const loginSetup = () => {
         const LoginPage = new Login();
         const PlannerPage = new Planner();
@@ -16,7 +17,9 @@ describe('Medicarebundle', () => {
         const MedicarePage = Medicare;
         const PreMedicarePage = new PreMedicare();
         const LongTermCarePage = new Longtermcare();
-        const HealthExpensesPage = new Healthexpenses();
+        const HealthExpensesPage = new HealthExpenses();
+        const MedicarebundlePage = new Medicarebundle();
+        const fundwithinvestmentPage= new fundwithinvestment();
 
 
 
@@ -73,9 +76,8 @@ describe('Medicarebundle', () => {
             LongTermCarePage.clickrunanalysis();
             LongTermCarePage.clickrunanalysisbutton();
             HealthExpensesPage.clickhealthcareexpenses();
-
-
-
+            MedicarebundlePage.clickmedicarebundlelink();
+            fundwithinvestmentPage.fundWithInvestmentlinkClick();
             // cy.url().should('not.include', '/login');
 
         })
@@ -89,72 +91,56 @@ describe('Medicarebundle', () => {
                 cy.url().should('not.include', '/login');
             }
         });
-        cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner#medicare_bundles');
+        cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner#long_term_care_expenses');
     });
-
-it('TC_FP_MBundle_01', () =>{                           //landing page
-    const Medicarebundlepage = new Medicarebundle;
-    Medicarebundlepage.clickmedicarebundlelink();
-
-})
-it('TC_FP_MBundle_02', () =>{                         //view input button
-    const Medicarebundlepage = new Medicarebundle;
-    Medicarebundlepage.clickviewinputbutton();
+    it('TC_FP_LongTermCareExpenses_01', () =>{                           //landing page
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
 
 })
-it('TC_FP_MBundle_03', () =>{                         //primary name display
-    const Medicarebundlepage = new Medicarebundle;
-    Medicarebundlepage.clickviewinputbutton();
+it('TC_FP_LongTermCareExpenses_02', () =>{                           //primary name
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewprimaryandname();
 
 })
-it('TC_FP_MBundle_04', () =>{                         //primary name display
-    const Medicarebundlepage = new Medicarebundle;
-    Medicarebundlepage.primarynamedisplay();
+it('TC_FP_LongTermCareExpenses_03', () =>{                           //primary TotalPresentValueExpenses
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewPrimaryTotalPresentValueExpenses();
 
 })
-it('TC_FP_MBundle_05', () =>{                         //medicarebundle title
-    const Medicarebundlepage = new Medicarebundle;
-    Medicarebundlepage.checkmedicarebundletitle();
+it('TC_FP_LongTermCareExpenses_04', () =>{                           //primary name
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewPrimaryTotalFutureValueExpenses();
 
 })
-it('TC_FP_MBundle_06', () =>{                         //numberofrowsandcol
-    const Medicarebundlepage = new Medicarebundle;
-    Medicarebundlepage.numberofrowsandcol();
+it('TC_FP_LongTermCareExpenses_05', () =>{                           //primary name
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewPrimaryGraph();
 
 })
-it('TC_FP_MBundle_07', () =>{                         //numberofcol
-    const Medicarebundlepage = new Medicarebundle;
-    Medicarebundlepage.numberofcol();
+it.only('TC_FP_LongTermCareExpenses_06', () =>{                           //primary name
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewPrimaryGraph();
+    LongTermCareExpense.viewPrimaryFutureValueYaxis();
 
 })
-it('TC_FP_MBundle_08', () =>{                         //medicare component title
-    const Medicarebundlepage = new Medicarebundle;
-    Medicarebundlepage.checkmedicarecomponenttitle();
+it.only('TC_FP_LongTermCareExpenses_07', () =>{                           //primary name
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewPrimaryGraph();
+    LongTermCareExpense.viewPrimaryYearXaxis();
 
 })
-it('TC_FP_MBundle_09', () =>{                         //spousename display
-    const Medicarebundlepage = new Medicarebundle;
-    Medicarebundlepage.verifyspousename();
-
-})
-it('TC_FP_MBundle_10', () =>{                         //executing all rows primary
-    const Medicarebundlepage = new Medicarebundle;
-    Medicarebundlepage.eachrowsexecuting();
-
-})
-it('TC_FP_MBundle_11', () =>{                         //spouse rows and col
-    const Medicarebundlepage = new Medicarebundle;
-    Medicarebundlepage.verifyspouserowsandcolumn();
-
-})
-it('TC_FP_MBundle_12', () =>{                         //spouse rows
-    const Medicarebundlepage = new Medicarebundle;
-    Medicarebundlepage.verifyspousenoofrows();
-
-})
-it('TC_FP_MBundle_13', () =>{                         //executing all rows spouse
-    const Medicarebundlepage = new Medicarebundle;
-    Medicarebundlepage.spouseallrowsdisplay();
+it.only('TC_FP_LongTermCareExpenses_08', () =>{                           //primary name
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewPrimaryAdultDayCare();
+    //LongTermCareExpense.viewPrimaryYearXaxis();
 
 })
 })
