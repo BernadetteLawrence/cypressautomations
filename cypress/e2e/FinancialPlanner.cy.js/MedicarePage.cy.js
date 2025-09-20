@@ -1,7 +1,7 @@
 import Login from "../../PageObjects/FinancialPlannerPOM/LoginPage";
 import Planner from "../../PageObjects/FinancialPlannerPOM/PlannerPage";
 import Personal from "../../PageObjects/FinancialPlannerPOM/PersonalPage";
-import Medicare from "../../PageObjects/FinancialPlannerPOM/Medicare";
+import Medicare from "../../PageObjects/FinancialPlannerPOM/MedicarePage";
 
 describe('Medicare', () => {
     const loginSetup = () => {
