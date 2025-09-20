@@ -3,24 +3,33 @@ import Planner from "../../PageObjects/FinancialPlannerPOM/PlannerPage";
 import Personal from "../../PageObjects/FinancialPlannerPOM/PersonalPage";
 import Medicare from "../../PageObjects/FinancialPlannerPOM/MedicarePage";
 import PreMedicare from "../../PageObjects/FinancialPlannerPOM/PreMedicarePage";
-import Longtermcare from "../../PageObjects/FinancialPlannerPOM/LongTermCarePage"; 
+import Longtermcare from "../../PageObjects/FinancialPlannerPOM/LongTermCarePage";
 
-describe('longtermcare', () => {
+
+describe('Longtermcare', () => {
     const loginSetup = () => {
         const LoginPage = new Login();
+<<<<<<< HEAD
         const PlannerPage = new Planner();
         const PersonalPage = new Personal();
-        const MedicarePage = new Medicare();
+        const MedicarePage =  Medicare;
         const PreMedicarePage = new PreMedicare();
+=======
+        const plannerPage = new Planner();
+        const PersonalPage= new Personal();
+        const PreMedicarePage= new PreMedicare();
+        const MedicarePage=  Medicare;
+       
+>>>>>>> 489890904e988a6881706c2ad178d51182d66e46
 
-
-        cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner');
+    cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner');
+    
         cy.fixture('FinancialPlanner').then((data) => {
 
             LoginPage.setEMailUserID("data.UserID");
             LoginPage.setPassword("data.Password");
             LoginPage.clickLogin();
-            PlannerPage.setClient();
+            plannerPage.setClient();
             PersonalPage.setClientEmail("data.ClientEmail");
             PersonalPage.setFirstName("data.FirstName");
             PersonalPage.setLastName("data.LastName");
@@ -49,9 +58,17 @@ describe('longtermcare', () => {
             PersonalPage.clickMedicare(); // will click the Medicare tab
             PersonalPage.setTaxfillingstatusAlert();
             MedicarePage.clickmedicaretab();
-            MedicarePage.checkyearandage();
-            MedicarePage.selectyearandlifeexpectancyvalue();
-            MedicarePage.choosemagitieroption();
+            MedicarePage.CheckMedicareYearAndAge();
+            MedicarePage.selectYearAndLifeExpectancyAge();
+            MedicarePage.chooseMagitierOption();
+<<<<<<< HEAD
+=======
+            MedicarePage. CheckPartALabel();
+            MedicarePage.CheckPartACheckBox();
+            MedicarePage.SelectDentalProfile();
+            MedicarePage.CheckMedicareYearAndAgeSpouse();
+            MedicarePage.selectspouseYearAndLifeExpectancyAge();
+>>>>>>> 489890904e988a6881706c2ad178d51182d66e46
             PreMedicarePage.clickpremedicarepage();
             PreMedicarePage.clickpersonalpage();
             PreMedicarePage.clickpremedicarepage();
@@ -60,15 +77,9 @@ describe('longtermcare', () => {
             PreMedicarePage.chooseplantypeGoldEPO();
             PreMedicarePage.viewspouseplantype();
             PreMedicarePage.choosespouseplantypeGoldEPO();
+             })
+}
 
-
-
-            // cy.url().should('not.include', '/login');
-
-        })
-
-
-    }
     beforeEach(() => {
         // Create/restore the session before each test
         cy.session('login', loginSetup, {
@@ -80,7 +91,7 @@ describe('longtermcare', () => {
     });
 
 
-     it('TC_FP_LongTermCare_01', () => {                  // LongTermCare Landing Page
+     it.only('TC_FP_LongTermCare_01', () => {                  // LongTermCare Landing Page
         const LongTermCarePage = new Longtermcare();
         LongTermCarePage.setlongtermcare();
                

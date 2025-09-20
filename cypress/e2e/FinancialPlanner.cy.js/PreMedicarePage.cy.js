@@ -1,6 +1,7 @@
 import Login from "../../PageObjects/FinancialPlannerPOM/LoginPage";
 import Planner from "../../PageObjects/FinancialPlannerPOM/PlannerPage";
 import Personal from "../../PageObjects/FinancialPlannerPOM/PersonalPage";
+import Medicare from "../../PageObjects/FinancialPlannerPOM/MedicarePage";
 import PreMedicare from "../../PageObjects/FinancialPlannerPOM/PreMedicarePage";
 
 describe('PreMedicare', () => {
@@ -8,6 +9,11 @@ describe('PreMedicare', () => {
         const LoginPage = new Login();
         const PlannerPage = new Planner();
         const PersonalPage = new Personal();
+<<<<<<< HEAD
+        const MedicarePage =  Medicare;
+=======
+        const MedicarePage = Medicare;
+>>>>>>> 489890904e988a6881706c2ad178d51182d66e46
 
 
         cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner');
@@ -44,6 +50,20 @@ describe('PreMedicare', () => {
             PersonalPage.setSpouseRetirementZipCode("data.SpouseRetirementZipcode");
             PersonalPage.clickMedicare(); // will click the Medicare tab
             PersonalPage.setTaxfillingstatusAlert();
+            MedicarePage.clickmedicaretab();
+            MedicarePage.CheckMedicareYearAndAge();
+            MedicarePage.selectYearAndLifeExpectancyAge();
+            MedicarePage.chooseMagitierOption();
+<<<<<<< HEAD
+=======
+            MedicarePage.CheckPartALabel();
+            MedicarePage.CheckPartACheckBox();
+            MedicarePage.SelectDentalProfile();
+            MedicarePage.CheckMedicareYearAndAgeSpouse();
+            MedicarePage.selectspouseYearAndLifeExpectancyAge();
+
+          
+>>>>>>> 489890904e988a6881706c2ad178d51182d66e46
             // cy.url().should('not.include', '/login');
 
         })
@@ -60,7 +80,7 @@ describe('PreMedicare', () => {
         cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner#create_new_plan');
     });
 
-    it('TC_FP_PRE-MEDI_01', () => { //pre-medicare landing
+    it.only('TC_FP_PRE-MEDI_01', () => { //pre-medicare landing
         const PreMedicarePage = new PreMedicare();
         PreMedicarePage.clickpremedicarepage();
 
@@ -104,7 +124,7 @@ describe('PreMedicare', () => {
         PreMedicarePage.setplantypeoption();
 
     })
-    it('TC_FP_PRE-MEDI_08', () => { //check all the dropdown are visible
+    it.only('TC_FP_PRE-MEDI_08', () => { //check all the dropdown are visible
         const PreMedicarePage = new PreMedicare();
         PreMedicarePage.clickpremedicarepage();
         PreMedicarePage.clickpersonalpage();
@@ -120,7 +140,7 @@ describe('PreMedicare', () => {
         PreMedicarePage.viewplantype();
         PreMedicarePage.viewplantypelength();
     })
-    it('TC_FP_PRE-MEDI_10', () => { //choose plan type Gold EPO
+    it.only('TC_FP_PRE-MEDI_10', () => { //choose plan type Gold EPO
         const PreMedicarePage = new PreMedicare();
         PreMedicarePage.clickpremedicarepage();
         PreMedicarePage.clickpersonalpage();
