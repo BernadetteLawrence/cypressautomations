@@ -26,7 +26,8 @@ class LongTermCareExpenses {
     SpouseRowEle=".table.table-bordered.table-striped.table-fixed-header.OutputPSTable2nd.ltce-spousetable.mb-0>thead";
     SpouseAllRowEle=".table.table-bordered.table-striped.table-fixed-header.OutputPSTable2nd.ltce-spousetable.mb-0>tbody>tr";
     SpouseRowColumnEle=".table.table-bordered.table-striped.table-fixed-header.OutputPSTable2nd.ltce-spousetable.mb-0>tbody>tr>td";
-     constructor() {
+    viewInputEle="button[id='long_term_expenses_page_previous_button'] i[class='icon icon-data']" ;
+    constructor() {
     // container for the Long Term Care Expenses section (use whichever id exists)
     this.panel = '#LongTermCareExpenses, #long_term_care_expenses';
   }
@@ -210,6 +211,9 @@ class LongTermCareExpenses {
             })
         })
         }
-    
-}
+    clickviewInput(viewInput){
+        cy.get(this.viewInputEle).click();
+    }
+    }
+
 export default LongTermCareExpenses;
