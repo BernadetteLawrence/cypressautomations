@@ -3,18 +3,29 @@ class LongTermCareExpenses {
     primaryandnameEle="div[class='col-6'] h6:nth-child(1)";
     PrimaryTotalPresentValueExpensesEle="div[id='long_term_care_expenses'] div[class='row justify-content-center text-center mt-4 mb-3'] div:nth-child(1) h6:nth-child(1)";
     PrimaryTotalFutureValueExpensesEle="div[id='long_term_care_expenses'] div[class='row justify-content-center text-center mt-4 mb-3'] div:nth-child(1) h6:nth-child(1)";
-    PrimaryGraphEle="body > div:nth-child(21) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) > rect:nth-child(3)";
     PrimaryFutureValueYaxisEle="body > div:nth-child(21) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) > g:nth-child(9) > text:nth-child(1) > tspan:nth-child(1)";
     PrimaryYearXaxisEle="body > div:nth-child(21) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) > g:nth-child(8) > text:nth-child(1) > tspan:nth-child(1)";
-    PrimaryAdultDayCareEle="div[class='col-lg-7 col-md-7 pl-0 pr-0'] th:nth-child(2)";
-    PrimaryInHomeCareEle="div[class='col-lg-7 col-md-7 pl-0 pr-0'] th:nth-child(2)";
-    PrimaryNursingCareEle="div[class='col-lg-7 col-md-7 pl-0 pr-0'] th:nth-child(2)";
-    PrimaryCareBeginsEle="body > div:nth-child(21) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(1)";
-    PrimaryAgeEle="body > div:nth-child(21) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(1)";
-    PrimaryYearsofCareEle="body > div:nth-child(21) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(1)";
-    PrimaryFutureValueEle="body > div:nth-child(21) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(4) > td:nth-child(1)";
-    PrimaryPresentValueEle="body > div:nth-child(21) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(5) > td:nth-child(1)";
-    PrimaryPVasofyearEle="body > div:nth-child(21) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(6) > td:nth-child(1)";
+    PrimaryBarGraphEle="body > div:nth-child(21) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) > rect:nth-child(3)";
+    PrimaryRedAdultDayCareEle=".highcharts-point[x='30.5'][y='164.5']";
+    PrimaryBlueInHomeCareEle=".highcharts-point[x='133.5'][y='72.5']";
+    PrimaryGreenNursingCareEle=".highcharts-point[x='236.5'][y='50.5']";
+    PrimaryTableEle="table[class='table table-bordered table-striped table-fixed-header mb-0']";
+    PrimaryRowEle="table[class='table table-bordered table-striped table-fixed-header mb-0']>thead>tr";
+    PrimaryAllRowEle="table[class='table table-bordered table-striped table-fixed-header mb-0']>tbody>tr";
+    PrimaryRowColumnEle="table[class='table table-bordered table-striped table-fixed-header mb-0']>tbody>tr>td";
+    SpouseandnameEle="div[class='col-6 ltce-spousetable'] h6:nth-child(1)";
+    SpouseTotalPresentValueExpensesEle="body div[id='long_term_care_expenses'] div[class='wrapper yearly-summary create-plan-wrapper row-offcanvas clearfix toggled'] div[class='content output-plan-content'] div[class='tab-content'] div[id='LongTermCareExpenses'] div[class='row justify-content-center text-center mt-4 mb-3'] div:nth-child(1)";
+    SpouseTotalFutureValueExpensesEle="body div[id='long_term_care_expenses'] div[class='wrapper yearly-summary create-plan-wrapper row-offcanvas clearfix toggled'] div[class='content output-plan-content'] div[class='tab-content'] div[id='LongTermCareExpenses'] div[class='row justify-content-center text-center mt-4 mb-3'] div:nth-child(1)";
+    SpouseFutureValueYaxisEle="body > div:nth-child(21) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) > g:nth-child(9) > text:nth-child(1) > tspan:nth-child(1)";
+    SpouseYearXaxisEle="body > div:nth-child(21) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) > g:nth-child(8) > text:nth-child(1) > tspan:nth-child(1)";
+    SpouseBarGraphEle="body > div:nth-child(21) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > svg:nth-child(1) > rect:nth-child(3)";
+    SpouseRedAdultDayCareEle=".highcharts-point[x='30.5'][y='159.5']";
+    SpouseBlueInHomeCareEle=".highcharts-point[x='133.5'][y='56.5']";
+    SpouseGreenNursingCareEle=".highcharts-point[x='236.5'][y='31.5']";
+    SpouseTableEle=".table.table-bordered.table-striped.table-fixed-header.OutputPSTable2nd.ltce-spousetable.mb-0";
+    SpouseRowEle=".table.table-bordered.table-striped.table-fixed-header.OutputPSTable2nd.ltce-spousetable.mb-0>thead";
+    SpouseAllRowEle=".table.table-bordered.table-striped.table-fixed-header.OutputPSTable2nd.ltce-spousetable.mb-0>tbody>tr";
+    SpouseRowColumnEle=".table.table-bordered.table-striped.table-fixed-header.OutputPSTable2nd.ltce-spousetable.mb-0>tbody>tr>td";
      constructor() {
     // container for the Long Term Care Expenses section (use whichever id exists)
     this.panel = '#LongTermCareExpenses, #long_term_care_expenses';
@@ -26,55 +37,179 @@ class LongTermCareExpenses {
   }
     clicklongtermcareexpenseslink(longtermcareexpenseslink){
         cy.get(this.longtermcareexpenseslinkEle)
-        .click()
-        cy.wait(1000)
+        .click();
+        cy.wait(4000)
     }
     viewprimaryandname(primaryandname){
         cy.get(this.primaryandnameEle).should("be.visible");
+        cy.wait(4000);
     }
     viewPrimaryTotalPresentValueExpenses(PrimaryTotalPresentValueExpenses){
         cy.get(this.PrimaryTotalPresentValueExpensesEle).should("be.visible");
+        cy.wait(4000);
     }
      viewPrimaryTotalFutureValueExpenses(TotalPrimaryFutureValueExpenses){
         cy.get(this.PrimaryTotalFutureValueExpensesEle).should("be.visible");
+        cy.wait(4000);
     }
-    viewPrimaryGraph(PrimaryGraph){
-        cy.get(this.PrimaryGraphEle).should("be.visible");
+      viewPrimaryBarGraph(PrimaryBarGraph){
+      this.getChart(0).find('.highcharts-series rect.highcharts-point:visible')
+      .should('have.length.greaterThan', 0);
+      cy.wait(4000);
     }
     viewPrimaryFutureValueYaxis(PrimaryFutureValueYaxis){
         this.getChart(0).contains('text, tspan', /Future/i).should('exist');
-  this.getChart(0).contains('text, tspan', /Value/i).should('exist');
+        this.getChart(0).contains('text, tspan', /Value/i).should('exist');
+        cy.wait(4000);
     }
     viewPrimaryYearXaxis(PrimaryYearXaxis){
        this.getChart(0).contains('text, tspan', /^Year$/i).should('exist');
-  
+       cy.wait(4000);
     }
-    viewPrimaryAdultDayCare(PrimaryAdultDayCare){
-        cy.get(this.PrimaryAdultDayCareEle).should("be.visible");
+     
+     viewPrimaryRedAdultDayCare(PrimaryRedAdultDayCare){
+        cy.contains('PRIMARY', { matchCase: false, timeout: 20000 }).scrollIntoView();
+        this.getChart(0)
+        .find('.highcharts-series.highcharts-series-0 rect.highcharts-point:visible')
+        .should('have.length.greaterThan', 0)
+        .each($bar => cy.wrap($bar).should('be.visible'));//.and('contain.text', 'Adult Day Care'));
+        cy.wait(4000);
     }
-    viewPrimaryInHomeCare(PrimaryInHomeCare){
-        cy.get(this.PrimaryInHomeCareEle).should("be.visible");
+    viewPrimaryBlueInHomeCare(PrimaryBlueInHomeCare){
+        cy.contains('PRIMARY', { matchCase: false, timeout: 20000 }).scrollIntoView();
+        this.getChart(0)
+        .find('.highcharts-series.highcharts-series-0 rect.highcharts-point:visible')
+        .should('have.length.greaterThan', 0)
+        .each($bar => cy.wrap($bar).should('be.visible'));//.and('contain.text', 'In Home Care'));
+        cy.wait(4000);
     }
-    viewPrimaryNursingCare(PrimaryNursingCare){
-        cy.get(this.PrimaryNursingCareEle).should("be.visible");
+    viewPrimaryGreenNursingCare(PrimaryGreenNursingCare){
+        cy.contains('PRIMARY', { matchCase: false, timeout: 20000 }).scrollIntoView();
+        this.getChart(0)
+        .find('.highcharts-series.highcharts-series-0 rect.highcharts-point:visible')
+        .should('have.length.greaterThan', 0)
+        .each($bar => cy.wrap($bar).should('be.visible'));//.and('contain.text', 'Nursing Care'));
+        cy.wait(4000);
     }
-    viewPrimaryCareBegins(PrimaryCareBegins){
-        cy.get(this.PrimaryCareBeginsEle).should("be.visible");
+    viewPrimaryTable(PrimaryTable){
+        cy.get(this.PrimaryTableEle).should("be.visible");
+        cy.wait(4000);
     }
-    viewPrimaryAge(PrimaryAge){
-        cy.get(this.PrimaryAgeEle).should("be.visible");
+    viewPrimaryRow(PrimaryRow){
+        cy.get(this.PrimaryRowEle).should("be.visible").should("have.length", "1");
+        cy.wait(4000);
     }
-    viewPrimaryYearsofCare(PrimaryYearsofCare){
-        cy.get(this.PrimaryYearsofCareEle).should("be.visible");
+    viewPrimaryRowColumn(PrimaryRowColumn){
+        cy.get(this.PrimaryRowColumnEle).should("be.visible").should("have.length", "22");
+        cy.wait(4000);
     }
-    viewPrimaryFutureValue(PrimaryFutureValue){
-        cy.get(this.PrimaryFutureValueEle).should("be.visible");
+    viewPrimaryRow(PrimaryRow){
+        cy.get(this.PrimaryRowEle)
+        .each( ($row, index, $rows)=>{
+            cy.wrap($row).within(()=>
+            {
+                cy.get("th").each( ($col, index, $cols)=>{
+                cy.log($col.text());
+                })
+            })
+        })
+        }
+        viewPrimaryAllRow(PrimaryAllRow){
+        cy.get(this.PrimaryAllRowEle)
+        .each( ($row, index, $rows)=>{
+            cy.wrap($row).within(()=>
+            {
+                cy.get("td").each( ($col, index, $cols)=>{
+                cy.log($col.text());
+                })
+            })
+        })
+        }
+        viewSpouseandname(Spouseandname){
+        cy.get(this.SpouseandnameEle).should("be.visible");
+        cy.wait(4000);
     }
-    viewPrimaryPresentValue(PrimaryPresentValue){
-        cy.get(this.PrimaryPresentValueEle).should("be.visible");
+    viewSpouseTotalPresentValueExpenses(SpouseTotalPresentValueExpenses){
+        cy.get(this.SpouseTotalPresentValueExpensesEle).should("be.visible");
+        cy.wait(4000);
     }
-    viewPrimaryPVasofyear(PrimaryPVasofyear){
-        cy.get(this.PrimaryPVasofyearEle).should("be.visible");
+     viewSpouseTotalFutureValueExpenses(TotalSpouseFutureValueExpenses){
+        cy.get(this.SpouseTotalFutureValueExpensesEle).should("be.visible");
+        cy.wait(4000);
     }
+      viewSpouseBarGraph(SpouseBarGraph){
+      this.getChart(0).find('.highcharts-series rect.highcharts-point:visible')
+      .should('have.length.greaterThan', 0);
+      cy.wait(4000);
+    }
+    viewSpouseFutureValueYaxis(SpouseFutureValueYaxis){
+        this.getChart(0).contains('text, tspan', /Future/i).should('exist');
+        this.getChart(0).contains('text, tspan', /Value/i).should('exist');
+        cy.wait(4000);
+    }
+    viewSpouseYearXaxis(SpouseYearXaxis){
+       this.getChart(0).contains('text, tspan', /^Year$/i).should('exist');
+       cy.wait(4000);
+    }
+     
+     viewSpouseRedAdultDayCare(SpouseRedAdultDayCare){
+        cy.contains('SPOUSE', { matchCase: false, timeout: 20000 }).scrollIntoView();
+        this.getChart(0)
+        .find('.highcharts-series.highcharts-series-0 rect.highcharts-point:visible')
+        .should('have.length.greaterThan', 0)
+        .each($bar => cy.wrap($bar).should('be.visible'));//.and('contain.text', 'Adult Day Care'));
+        cy.wait(4000);
+    }
+    viewSpouseBlueInHomeCare(SpouseBlueInHomeCare){
+        cy.contains('SPOUSE', { matchCase: false, timeout: 20000 }).scrollIntoView();
+        this.getChart(0)
+        .find('.highcharts-series.highcharts-series-0 rect.highcharts-point:visible')
+        .should('have.length.greaterThan', 0)
+        .each($bar => cy.wrap($bar).should('be.visible'));//.and('contain.text', 'In Home Care'));
+        cy.wait(4000);
+    }
+    viewSpouseGreenNursingCare(SpouseGreenNursingCare){
+        cy.contains('SPOUSE', { matchCase: false, timeout: 20000 }).scrollIntoView();
+        this.getChart(0)
+        .find('.highcharts-series.highcharts-series-0 rect.highcharts-point:visible')
+        .should('have.length.greaterThan', 0)
+        .each($bar => cy.wrap($bar).should('be.visible'));//.and('contain.text', 'Nursing Care'));
+        cy.wait(4000);
+    }
+    viewSpouseTable(SpouseTable){
+        cy.get(this.SpouseTableEle).should("be.visible");
+        cy.wait(4000);
+    }
+    viewSpouseRow(SpouseRow){
+        cy.get(this.SpouseRowEle).should("be.visible").should("have.length", "1");
+        cy.wait(4000);
+    }
+    viewSpouseRowColumn(SpouseRowColumn){
+        cy.get(this.SpouseRowColumnEle).should("be.visible").should("have.length", "22");
+        cy.wait(4000);
+    }
+    viewSpouseRow(SpouseRow){
+        cy.get(this.SpouseRowEle)
+        .each( ($row, index, $rows)=>{
+            cy.wrap($row).within(()=>
+            {
+                cy.get("th").each( ($col, index, $cols)=>{
+                cy.log($col.text());
+                })
+            })
+        })
+        }
+        viewSpouseAllRow(SpouseAllRow){
+        cy.get(this.SpouseAllRowEle)
+        .each( ($row, index, $rows)=>{
+            cy.wrap($row).within(()=>
+            {
+                cy.get("td").each( ($col, index, $cols)=>{
+                cy.log($col.text());
+                })
+            })
+        })
+        }
+    
 }
 export default LongTermCareExpenses;
