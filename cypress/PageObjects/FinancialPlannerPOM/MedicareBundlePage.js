@@ -1,5 +1,5 @@
 class Medicarebundle{
-    medicarebundlelink="a[class='nav-link ui-link active']";
+    medicarebundlelink="#medicare_bundles > .plan-header > .nav-tabs-wrapper > .planoutput-nav > :nth-child(2) > .nav-link";
     viewinput="#compare_medical_bundle_previous_button";
     primaryname="table[class='table table-bordered table-striped table-fixed-header'] th[class='PSThead-noborder PSThead-MainTitle']";
     MedicareBundletitle="body > div:nth-child(22) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(1)";
@@ -12,8 +12,8 @@ class Medicarebundle{
     spouseallrows="table[class='table table-bordered table-striped table-fixed-header OutputPSTable2nd']>tbody>tr";
     medicarecomponent="#healthcare_expenses_details_popup_div > .table > :nth-child(3) > .blankrow > .PSThead-noborder";
     clickmedicarebundlelink(){
-        cy.get(this.medicarebundlelink)
-        .click()
+        cy.get(this.medicarebundlelink, { timeout: 10000 })
+        .click({force:true})
         cy.wait(1000)
     }
     clickviewinputbutton(){
@@ -73,8 +73,7 @@ class Medicarebundle{
 
     }
     spouseallrowsdisplay(){
-        cy.get(this.spouseallrows)
-        .each( ($row, index, $rows)=>{
+        cy.get(this.spouseallrows).should('exist').each( ($row, index, $rows)=>{
             cy.wrap($row).within( ()=>{
                 cy.get("td").each( ($col, index, $cols )=>{
                     cy.log($col.text());
