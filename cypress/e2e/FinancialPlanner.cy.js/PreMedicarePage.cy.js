@@ -1,7 +1,7 @@
 import Login from "../../PageObjects/FinancialPlannerPOM/LoginPage";
 import Planner from "../../PageObjects/FinancialPlannerPOM/PlannerPage";
 import Personal from "../../PageObjects/FinancialPlannerPOM/PersonalPage";
-import Medicare from "../../PageObjects/FinancialPlannerPOM/MedicarePage";
+import Medicare from "../../PageObjects/FinancialPlannerPOM/Medicare";
 import PreMedicare from "../../PageObjects/FinancialPlannerPOM/PreMedicarePage";
 
 describe('PreMedicare', () => {
@@ -54,7 +54,7 @@ describe('PreMedicare', () => {
             MedicarePage.CheckPartACheckBox();
             MedicarePage.SelectDentalProfile();
             MedicarePage.CheckMedicareYearAndAgeSpouse();
-            MedicarePage.selectspouseYearAndLifeExpectancyAge();
+            MedicarePage.selectYearAndLifeExpectancyAgeSpouse();
 
           
             // cy.url().should('not.include', '/login');
@@ -73,7 +73,7 @@ describe('PreMedicare', () => {
         cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner#create_new_plan');
     });
 
-    it.only('TC_FP_PRE-MEDI_01', () => { //pre-medicare landing
+   it('TC_FP_PRE-MEDI_01', () => { //pre-medicare landing
         const PreMedicarePage = new PreMedicare();
         PreMedicarePage.clickpremedicarepage();
 
@@ -117,7 +117,7 @@ describe('PreMedicare', () => {
         PreMedicarePage.setplantypeoption();
 
     })
-    it.only('TC_FP_PRE-MEDI_08', () => { //check all the dropdown are visible
+    it('TC_FP_PRE-MEDI_08', () => { //check all the dropdown are visible
         const PreMedicarePage = new PreMedicare();
         PreMedicarePage.clickpremedicarepage();
         PreMedicarePage.clickpersonalpage();
@@ -133,7 +133,7 @@ describe('PreMedicare', () => {
         PreMedicarePage.viewplantype();
         PreMedicarePage.viewplantypelength();
     })
-    it.only('TC_FP_PRE-MEDI_10', () => { //choose plan type Gold EPO
+    it('TC_FP_PRE-MEDI_10', () => { //choose plan type Gold EPO
         const PreMedicarePage = new PreMedicare();
         PreMedicarePage.clickpremedicarepage();
         PreMedicarePage.clickpersonalpage();

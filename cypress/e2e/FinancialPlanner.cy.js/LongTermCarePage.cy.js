@@ -1,7 +1,7 @@
 import Login from "../../PageObjects/FinancialPlannerPOM/LoginPage";
 import Planner from "../../PageObjects/FinancialPlannerPOM/PlannerPage";
 import Personal from "../../PageObjects/FinancialPlannerPOM/PersonalPage";
-import Medicare from "../../PageObjects/FinancialPlannerPOM/MedicarePage";
+import Medicare from "../../PageObjects/FinancialPlannerPOM/Medicare";
 import PreMedicare from "../../PageObjects/FinancialPlannerPOM/PreMedicarePage";
 import Longtermcare from "../../PageObjects/FinancialPlannerPOM/LongTermCarePage";
 
@@ -58,7 +58,7 @@ describe('Longtermcare', () => {
             MedicarePage.CheckPartACheckBox();
             MedicarePage.SelectDentalProfile();
             MedicarePage.CheckMedicareYearAndAgeSpouse();
-            MedicarePage.selectspouseYearAndLifeExpectancyAge();
+            MedicarePage.selectYearAndLifeExpectancyAgeSpouse();
             PreMedicarePage.clickpremedicarepage();
             PreMedicarePage.clickpersonalpage();
             PreMedicarePage.clickpremedicarepage();
@@ -81,7 +81,7 @@ describe('Longtermcare', () => {
     });
 
 
-     it.only('TC_FP_LongTermCare_01', () => {                  // LongTermCare Landing Page
+    it('TC_FP_LongTermCare_01', () => {                  // LongTermCare Landing Page
         const LongTermCarePage = new Longtermcare();
         LongTermCarePage.setlongtermcare();
                
@@ -457,7 +457,7 @@ describe('Longtermcare', () => {
         LongTermCarePage.selectspouseinhomecareoption();
         LongTermCarePage.selectspousenursingcareoption();
         LongTermCarePage.clickcancelbutton();
-        LongTermCarePage.verifypopupmessage();
+        LongTermCarePage.verifycancelpopupmessage();
     })
     it('TC_FP_LongTermCare_46', () =>{               //RunAnalysis-'OK'
         const LongTermCarePage = new Longtermcare();
@@ -474,9 +474,10 @@ describe('Longtermcare', () => {
         LongTermCarePage.selectspouseinhomecareoption();
         LongTermCarePage.selectspousenursingcareoption();
         LongTermCarePage.clickcancelbutton();
-        LongTermCarePage.verifypopupmessage();
+        LongTermCarePage.verifycancelpopupmessage();
         LongTermCarePage.clickokbutton();
     })
+
     it('TC_FP_LongTermCare_47', () =>{               //RunAnalysis-'Cancel'
         const LongTermCarePage = new Longtermcare();
         LongTermCarePage.setlongtermcare();
@@ -492,7 +493,7 @@ describe('Longtermcare', () => {
         LongTermCarePage.selectspouseinhomecareoption();
         LongTermCarePage.selectspousenursingcareoption();
         LongTermCarePage.clickcancelbutton();
-        LongTermCarePage.verifypopupmessage();
+        LongTermCarePage.verifycancelpopupmessage();
         LongTermCarePage.clickcancelbuttoninside();
     })
 

@@ -146,8 +146,8 @@ checkyearsofinhomecareoption(inhomecareoption){
 }
 selectyearsofinhomecareoption(inhomecareoption){
     cy.get(this. yearsofinhomecareoption)
-    .select('2',{ force: true })
-.should('have.value', '2')
+    .select('1',{ force: true })
+.should('have.value', '1')
 cy.wait(1000)
 
 }
@@ -200,7 +200,7 @@ clickpremedicarepage(premedicarepage){
     .click()
 }
 checkspousequalityofcarename(spousequalityofcarename){
-    cy.get(this.spousequalityofcaredisplay)
+    cy.get(this.spouseqaulityofcareoption)
     .should('be.visible')
     cy.wait(1000)
 }
@@ -285,8 +285,8 @@ checklengthofspouseinhomecare(lengthofinhomecare){
 }
 selectspouseinhomecareoption(slectoption){
     cy.get(this.spouseyearsofinhomecareoption)
-    .select('2',{ force: true })
-    .should('have.value', '2')
+    .select('1',{ force: true })
+    .should('have.value', '1')
     cy.wait(1000)
 }
 checkspousenursingcaredisplay(spousenursingcaredisplay){
@@ -333,8 +333,8 @@ clickrunanalysis(runanalysisbutton)
     cy.wait(1000)
 }
 verifypopupmessage(popupmessage){
-    cy.get(this.popupmessage)
-     .should('be.visible')
+cy.get(this.popupmessage)
+  .should('be.visible')
   .and('contain.text', 'Do you want to Run Analysis now or review and edit inputs?');
   cy.wait(1000)
 
@@ -357,7 +357,7 @@ clickcancelbutton(cancelbutton){
     .click()
     cy.wait(1000)
 }
-verifypopupmessage(popmessagecancelbutton)
+verifycancelpopupmessage(popmessagecancelbutton)
 {
     cy.get(this. cancelbuttonpopupmessage)
     .should('contain.text','You are in process of creating the plan. Going to home screen will delete your plan.')
@@ -376,4 +376,3 @@ clickcancelbuttoninside(cancelbuttoninside){
 }
 export default Longtermcare;
 
-   
