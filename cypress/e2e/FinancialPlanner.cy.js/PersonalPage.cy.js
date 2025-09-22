@@ -5,15 +5,15 @@ import Personal from "../../PageObjects/FinancialPlannerPOM/PersonalPage";
 describe('Personal', () => {
     const loginSetup = () => {
         const LoginPage = new Login();
-        const plannerPage = new Planner();
-        
+        const PlannerPage = new Planner();
+        //const
         cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner');
         cy.fixture('FinancialPlanner').then((data) => {
 
             LoginPage.setEMailUserID("data.UserID");
             LoginPage.setPassword("data.Password");
             LoginPage.clickLogin();
-            plannerPage.clickClient();
+            PlannerPage.setClient();
         })
   }
     beforeEach(() => {
@@ -457,6 +457,5 @@ it('TC_FP_Personal_26: Client Medicare', () => {
     PersonalPage.clickMedicare();  // will click the Medicare tab
     PersonalPage.setTaxfillingstatusAlert();
 });
+
 });
-
-
