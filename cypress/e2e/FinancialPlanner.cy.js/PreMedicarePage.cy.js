@@ -50,13 +50,6 @@ describe('PreMedicare', () => {
             MedicarePage.CheckMedicareYearAndAge();
             MedicarePage.selectYearAndLifeExpectancyAge();
             MedicarePage.chooseMagitierOption();
-            MedicarePage.CheckPartALabel();
-            MedicarePage.CheckPartACheckBox();
-            MedicarePage.SelectDentalProfile();
-            MedicarePage.CheckMedicareYearAndAgeSpouse();
-            MedicarePage.selectYearAndLifeExpectancyAgeSpouse();
-
-          
             // cy.url().should('not.include', '/login');
 
         })
@@ -73,7 +66,7 @@ describe('PreMedicare', () => {
         cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner#create_new_plan');
     });
 
-   it('TC_FP_PRE-MEDI_01', () => { //pre-medicare landing
+    it('TC_FP_PRE-MEDI_01', () => { //pre-medicare landing
         const PreMedicarePage = new PreMedicare();
         PreMedicarePage.clickpremedicarepage();
 
