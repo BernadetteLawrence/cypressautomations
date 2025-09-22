@@ -18,7 +18,7 @@ describe('LongTermCareExpenses', () => {
         const PreMedicarePage = new PreMedicare();
         const LongTermCarePage = new Longtermcare();
         const HealthExpensesPage = new HealthExpenses();
-        const MedicarebundlePage = new Medicarebundle();
+        const Medicarebundlepage = new Medicarebundle();
         const fundwithinvestmentPage= new fundwithinvestment();
 
 
@@ -76,7 +76,7 @@ describe('LongTermCareExpenses', () => {
             LongTermCarePage.clickrunanalysis();
             LongTermCarePage.clickrunanalysisbutton();
             HealthExpensesPage.clickhealthcareexpenses();
-            MedicarebundlePage.clickmedicarebundlelink();
+            Medicarebundlepage.clickmedicarebundlelink();
             fundwithinvestmentPage.fundWithInvestmentlinkClick();
             // cy.url().should('not.include', '/login');
 
@@ -110,37 +110,153 @@ it('TC_FP_LongTermCareExpenses_03', () =>{                           //primary T
     LongTermCareExpense.viewPrimaryTotalPresentValueExpenses();
 
 })
-it('TC_FP_LongTermCareExpenses_04', () =>{                           //primary name
+it('TC_FP_LongTermCareExpenses_04', () =>{                           //primary name TotalFutureValueExpenses
     const LongTermCareExpense = new LongTermCareExpenses;
     LongTermCareExpense.clicklongtermcareexpenseslink();
     LongTermCareExpense.viewPrimaryTotalFutureValueExpenses();
-
 })
-it('TC_FP_LongTermCareExpenses_05', () =>{                           //primary name
+it('TC_FP_LongTermCareExpenses_05', () =>{                           // PrimaryBarGraph
     const LongTermCareExpense = new LongTermCareExpenses;
     LongTermCareExpense.clicklongtermcareexpenseslink();
-    LongTermCareExpense.viewPrimaryGraph();
-
+    LongTermCareExpense.viewPrimaryBarGraph();
 })
-it.only('TC_FP_LongTermCareExpenses_06', () =>{                           //primary name
+it('TC_FP_LongTermCareExpenses_06', () =>{                           // viewPrimaryFutureValueYaxis
     const LongTermCareExpense = new LongTermCareExpenses;
     LongTermCareExpense.clicklongtermcareexpenseslink();
-    LongTermCareExpense.viewPrimaryGraph();
+    LongTermCareExpense.viewPrimaryBarGraph();
     LongTermCareExpense.viewPrimaryFutureValueYaxis();
-
 })
-it.only('TC_FP_LongTermCareExpenses_07', () =>{                           //primary name
+it('TC_FP_LongTermCareExpenses_07', () =>{                           //viewPrimaryYearXaxis
     const LongTermCareExpense = new LongTermCareExpenses;
     LongTermCareExpense.clicklongtermcareexpenseslink();
-    LongTermCareExpense.viewPrimaryGraph();
+    LongTermCareExpense.viewPrimaryBarGraph();
     LongTermCareExpense.viewPrimaryYearXaxis();
-
 })
-it.only('TC_FP_LongTermCareExpenses_08', () =>{                           //primary name
+it('TC_FP_LongTermCareExpenses_08', () =>{                           //viewPrimaryRedAdultDayCare
     const LongTermCareExpense = new LongTermCareExpenses;
     LongTermCareExpense.clicklongtermcareexpenseslink();
-    LongTermCareExpense.viewPrimaryAdultDayCare();
-    //LongTermCareExpense.viewPrimaryYearXaxis();
+    LongTermCareExpense.viewPrimaryBarGraph();
+    LongTermCareExpense.viewPrimaryRedAdultDayCare();
+    })
+it('TC_FP_LongTermCareExpenses_09', () =>{                           //viewPrimaryBlueInHomeCare
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewPrimaryBarGraph();
+    LongTermCareExpense.viewPrimaryBlueInHomeCare();
 
 })
+it('TC_FP_LongTermCareExpenses_10', () =>{                           //viewPrimaryGreenNursingCare
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewPrimaryBarGraph();
+    LongTermCareExpense.viewPrimaryGreenNursingCare();
+   
+})
+it('TC_FP_LongTermCareExpenses_11', () =>{                           //viewPrimaryTable
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewPrimaryTable();
+   })
+it('TC_FP_LongTermCareExpenses_12', () =>{                           //viewPrimaryRow
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewPrimaryTable();
+    LongTermCareExpense.viewPrimaryRow();
+   })
+it('TC_FP_LongTermCareExpenses_13', () =>{                           //viewPrimaryRowColumn
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewPrimaryTable();
+    LongTermCareExpense.viewPrimaryRowColumn();
+   })
+   it('TC_FP_LongTermCareExpenses_14', () =>{                           //viewPrimaryRow
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewPrimaryTable();
+    LongTermCareExpense.viewPrimaryRow();
+   })
+   it('TC_FP_LongTermCareExpenses_15', () =>{                           //viewPrimaryAllRow
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewPrimaryTable();
+    LongTermCareExpense.viewPrimaryAllRow();
+   })
+   it('TC_FP_LongTermCareExpenses_16', () =>{                           //Spouse name
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.viewSpouseandname();
+   })
+   it('TC_FP_LongTermCareExpenses_17', () =>{                           //SpouseTotalPresentValueExpenses
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.viewSpouseandname();
+    LongTermCareExpense.viewSpouseTotalPresentValueExpenses();
+   })
+   it('TC_FP_LongTermCareExpenses_18', () =>{                           //SpouseTotalFutureValueExpenses
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.viewSpouseandname();
+    LongTermCareExpense.viewSpouseTotalFutureValueExpenses();
+   })
+   it('TC_FP_LongTermCareExpenses_19', () =>{                           // SpouseBarGraph
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewSpouseBarGraph();
+})
+it('TC_FP_LongTermCareExpenses_20', () =>{                           // SpouseFutureValueYaxis
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewSpouseBarGraph();
+    LongTermCareExpense.viewSpouseFutureValueYaxis();
+})
+it('TC_FP_LongTermCareExpenses_21', () =>{                           //SpouseYearXaxis
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewSpouseBarGraph();
+    LongTermCareExpense.viewSpouseYearXaxis();
+})
+it('TC_FP_LongTermCareExpenses_22', () =>{                           //SpouseRedAdultDayCare
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewSpouseBarGraph();
+    LongTermCareExpense.viewSpouseRedAdultDayCare();
+})
+it('TC_FP_LongTermCareExpenses_23', () =>{                           //SpouseBlueInHomeCare
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewSpouseBarGraph();
+    LongTermCareExpense.viewSpouseBlueInHomeCare();
+})
+it('TC_FP_LongTermCareExpenses_24', () =>{                           //SpouseGreenNursingCare
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewSpouseBarGraph();
+    LongTermCareExpense.viewSpouseGreenNursingCare(); 
+})
+it('TC_FP_LongTermCareExpenses_25', () =>{                           //SpouseTable
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewSpouseTable();
+   })
+   it('TC_FP_LongTermCareExpenses_26', () =>{                           //SpouseRow
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewSpouseTable();
+    LongTermCareExpense.viewSpouseRow();
+   })
+   it('TC_FP_LongTermCareExpenses_27', () =>{                           //SpouseRowColumn
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewSpouseTable();
+    LongTermCareExpense.viewSpouseRowColumn();
+   })
+   it('TC_FP_LongTermCareExpenses_28', () =>{                           //SpouseRow
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewSpouseTable();
+    LongTermCareExpense.viewSpouseRow();
+   })
+   it('TC_FP_LongTermCareExpenses_29', () =>{                           //SpouseAllRow
+    const LongTermCareExpense = new LongTermCareExpenses;
+    LongTermCareExpense.clicklongtermcareexpenseslink();
+    LongTermCareExpense.viewSpouseTable();
+    LongTermCareExpense.viewSpouseAllRow();
+   })
 })
