@@ -1,7 +1,7 @@
 import Login from "../../PageObjects/FinancialPlannerPOM/LoginPage";
 import Planner from "../../PageObjects/FinancialPlannerPOM/PlannerPage";
 import Personal from "../../PageObjects/FinancialPlannerPOM/PersonalPage";
-import Medicare from "../../PageObjects/FinancialPlannerPOM/Medicare";
+import Medicare from "../../PageObjects/FinancialPlannerPOM/MedicarePage123";
 
 describe('Medicare', () => {
     const loginSetup = () => {
@@ -16,7 +16,7 @@ describe('Medicare', () => {
             LoginPage.setEMailUserID("data.UserID");
             LoginPage.setPassword("data.Password");
             LoginPage.clickLogin();
-            PlannerPage.clickClient();
+            PlannerPage.setClient();
             PersonalPage.setClientEmail("data.ClientEmail");
             PersonalPage.setFirstName("data.FirstName");
             PersonalPage.setLastName("data.LastName");
@@ -111,10 +111,11 @@ it('TC_FP_MEDI_08', () => {  //Magi name display
     Medicare.clickmedicaretab();
     Medicare.verifymagitiername();
 })
-it('TC_FP_MEDI_09', () => {  //Magi tier option Lenghth display
+it('TC_FP_MEDI_09', () => {  //Magi tier option
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.verifymagitiername();
+    //Medicare.selectmagitiername();
     Medicare.LengthOfMagitierOption();
 })
 it('TC_FP_MEDI_10', () => {  //choose magi tier option 1
@@ -124,12 +125,22 @@ it('TC_FP_MEDI_10', () => {  //choose magi tier option 1
     Medicare.chooseMagitierOption();
 }) 
 
+/*it('Iterates through elements and performs actions', () => {
+  //  cy.visit('https://example.com'); // Replace with your URL
 
+    Medicare.getElements().then((elements) => {
+      for (let i = 0; i < elements.length; i++) {
+        Medicare.clickElement(i); // Click each element
+        cy.log(`Clicked element at index ${i}`);
+      }
+    });
+  });*/
 it('TC_FP_MEDI_11', () => {  //Part A label and checkbox display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckPartALabel();
     Medicare.CheckPartACheckBox();
+    //Medicare.clickPartACheckBox();
 
 })
 it('TC_FP_MEDI_12', () => {  //Monthly premium for A display
@@ -336,7 +347,7 @@ it('TC_FP_MEDI_39', () => {  //choose magi tier option 5
     Medicare.clickmedicaretab();
     Medicare.chooseMagitierOptionSpouse5();
 }) 
-it.only('TC_FP_MEDI_40', () => {  //choose magi tier option 6
+it('TC_FP_MEDI_40', () => {  //choose magi tier option 6
 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
@@ -344,11 +355,13 @@ it.only('TC_FP_MEDI_40', () => {  //choose magi tier option 6
 })
 
 
-it.only('TC_FP_MEDI_41', () => {  //Spouse Part A label and checkbox display
+it('TC_FP_MEDI_41', () => {  //Spouse Part A label and checkbox display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckSpousePartALabel();
     Medicare.CheckSpousePartACheckBox();
 })
 
+
 });
+
