@@ -14,13 +14,6 @@ describe('Longtermcare', () => {
         const PersonalPage = new Personal();
         const MedicarePage =  Medicare;
         const PreMedicarePage = new PreMedicare();
-=======
-        const plannerPage = new Planner();
-        const PersonalPage= new Personal();
-        const PreMedicarePage= new PreMedicare();
-        const MedicarePage=  Medicare;
-       
->>>>>>> 489890904e988a6881706c2ad178d51182d66e46
 
     cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner');
     

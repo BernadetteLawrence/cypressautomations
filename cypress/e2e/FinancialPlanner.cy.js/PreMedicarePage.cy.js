@@ -13,7 +13,6 @@ describe('PreMedicare', () => {
         const MedicarePage =  Medicare;
 =======
         const MedicarePage = Medicare;
->>>>>>> 489890904e988a6881706c2ad178d51182d66e46
 
 
         cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner');
