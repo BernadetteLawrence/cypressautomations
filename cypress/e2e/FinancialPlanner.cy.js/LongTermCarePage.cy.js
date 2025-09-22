@@ -9,11 +9,18 @@ import Longtermcare from "../../PageObjects/FinancialPlannerPOM/LongTermCarePage
 describe('Longtermcare', () => {
     const loginSetup = () => {
         const LoginPage = new Login();
+<<<<<<< HEAD
+        const PlannerPage = new Planner();
+        const PersonalPage = new Personal();
+        const MedicarePage =  Medicare;
+        const PreMedicarePage = new PreMedicare();
+=======
         const plannerPage = new Planner();
         const PersonalPage= new Personal();
         const PreMedicarePage= new PreMedicare();
         const MedicarePage=  Medicare;
        
+>>>>>>> 489890904e988a6881706c2ad178d51182d66e46
 
     cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner');
     
@@ -54,11 +61,18 @@ describe('Longtermcare', () => {
             MedicarePage.CheckMedicareYearAndAge();
             MedicarePage.selectYearAndLifeExpectancyAge();
             MedicarePage.chooseMagitierOption();
+<<<<<<< HEAD
+=======
             MedicarePage. CheckPartALabel();
             MedicarePage.CheckPartACheckBox();
             MedicarePage.SelectDentalProfile();
             MedicarePage.CheckMedicareYearAndAgeSpouse();
+<<<<<<< HEAD
             MedicarePage.selectYearAndLifeExpectancyAgeSpouse();
+=======
+            MedicarePage.selectspouseYearAndLifeExpectancyAge();
+>>>>>>> 489890904e988a6881706c2ad178d51182d66e46
+>>>>>>> bbbf34f772b3ddfa7bbbbd9e36bce6db5cf04910
             PreMedicarePage.clickpremedicarepage();
             PreMedicarePage.clickpersonalpage();
             PreMedicarePage.clickpremedicarepage();
