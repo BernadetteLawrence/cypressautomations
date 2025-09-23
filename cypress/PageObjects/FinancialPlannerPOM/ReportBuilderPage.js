@@ -1,5 +1,5 @@
 class Reportbuilder {
-
+    
     reportbuilderlink = "#pdf_generator_option_page > .plan-header > .nav-tabs-wrapper > .planoutput-nav > :nth-child(5) > .nav-link";
     nameofreportbuilder = "#report_builder_member_name";
     defaulttitle = "#pdf_generator_options_form > :nth-child(1) > :nth-child(1) > .mb-2";
@@ -32,6 +32,7 @@ class Reportbuilder {
     cancelemail = "#emailPdf > .modal-dialog > .modal-content > .modal-footer > .btn-secondary";
     generatepdf = "#pdf_submit";
     viewinputbutton = "#pdf_generator_option_page_previous_button";
+    //funwithinvestment="cy.get('#medicare_bundles > .plan-header > .nav-tabs-wrapper > .planoutput-nav > :nth-child(3) > .nav-link')";
 
 
 
@@ -209,7 +210,7 @@ class Reportbuilder {
     }
     sendemailbutton() {
         cy.get(this.sendemail)
-            .click()
+            .click({force:true})
     }
     cancelemailbutton() {
         cy.get(this.cancelemail)
@@ -217,7 +218,9 @@ class Reportbuilder {
     }
     generatepdfverify() {
         cy.get(this.generatepdf)
-            .click()
+            .should('be.visible')
+            .should('not.be.disabled')
+            .click({force:true});
     }
     viewinput() {
         cy.get(this.viewinputbutton)

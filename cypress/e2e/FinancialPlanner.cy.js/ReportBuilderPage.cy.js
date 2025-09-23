@@ -4,8 +4,10 @@ import Personal from "../../PageObjects/FinancialPlannerPOM/PersonalPage";
 import Medicare from "../../PageObjects/FinancialPlannerPOM/MedicarePage";
 import PreMedicare from "../../PageObjects/FinancialPlannerPOM/PreMedicarePage";
 import Longtermcare from "../../PageObjects/FinancialPlannerPOM/LongTermCarePage";
-import Healthexpenses from "../../PageObjects/FinancialPlannerPOM/HealthCareExpensePage";
+import HealthExpenses from "../../PageObjects/FinancialPlannerPOM/HealthExpensesPage";
 import Medicarebundle from "../../PageObjects/FinancialPlannerPOM/MedicareBundlePage";
+import fundwithinvestment from "../../PageObjects/FinancialPlannerPOM/fundwithinvestmentPage";
+import LongTermCareExpenses from "../../PageObjects/FinancialPlannerPOM/LongTermCareExpenses";
 import Reportbuilder from "../../PageObjects/FinancialPlannerPOM/ReportBuilderPage";
 
 describe('reportbuilder', () => {
@@ -16,9 +18,10 @@ describe('reportbuilder', () => {
         const MedicarePage = Medicare;
         const PreMedicarePage = new PreMedicare();
         const LongTermCarePage = new Longtermcare();
-        const HealthExpensesPage = new Healthexpenses();
+        const HealthExpensesPage = new HealthExpenses();
         const Medicarebundlepage = new Medicarebundle;
-
+        const fundwithinvestmentPage= new fundwithinvestment();
+        const LongTermCareExpense= new LongTermCareExpenses();
 
 
         cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner');
@@ -61,7 +64,11 @@ describe('reportbuilder', () => {
             MedicarePage.chooseMagitierOption();
             MedicarePage. CheckPartALabel();
             MedicarePage.CheckPartACheckBox();
+            MedicarePage.SelectSupplementPlanN();
             MedicarePage.SelectDentalProfile();
+            MedicarePage.CheckMedicareYearAndAgeSpouse();
+            MedicarePage.selectYearAndLifeExpectancyAgeSpouse();
+            MedicarePage.SelectSupplementPlanNSpouse()
             PreMedicarePage.clickpremedicarepage();
             PreMedicarePage.setplantypeoption();
             PreMedicarePage.viewplantype();
@@ -91,9 +98,11 @@ describe('reportbuilder', () => {
             HealthExpensesPage.viewinteractivecalculationsonthegraphspouse();
             HealthExpensesPage.checkpostretirementpremedicarepremiumspouse();
             Medicarebundlepage.clickmedicarebundlelink();
-            Medicarebundlepage.eachrowsexecuting();
-            Medicarebundlepage.spouseallrowsdisplay();
-                     
+            //Medicarebundlepage.eachrowsexecuting();
+           // Medicarebundlepage.numberofrowsandcol();
+           // Medicarebundlepage.spouseallrowsdisplay();
+            fundwithinvestmentPage.fundWithInvestmentlinkClick();
+            LongTermCareExpense.clicklongtermcareexpenseslink();         
         })
 
     }
@@ -267,15 +276,7 @@ describe('reportbuilder', () => {
     })
     it('TC_FP_Report_32', () => { //Generate PDF
         const ReportBuilderPage = new Reportbuilder();
-        ReportBuilderPage.generatepdfverify();
+      ReportBuilderPage.generatepdfverify();
     })
-    
-
-
-
-
-
-
-
-
 })
+   

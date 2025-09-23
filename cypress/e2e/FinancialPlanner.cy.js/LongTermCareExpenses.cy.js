@@ -259,7 +259,7 @@ it('TC_FP_LongTermCareExpenses_25', () =>{                           //SpouseTab
     LongTermCareExpense.viewSpouseTable();
     LongTermCareExpense.viewSpouseAllRow();
    })
-   it.only('TC_FP_LongTermCareExpenses_29', () =>{                           //View Input
+   it('TC_FP_LongTermCareExpenses_30', () =>{                           //View Input
     const LongTermCareExpense = new LongTermCareExpenses;
     LongTermCareExpense.clicklongtermcareexpenseslink();
     LongTermCareExpense.clickviewInput();

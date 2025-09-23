@@ -59,6 +59,12 @@ describe('Personal', () => {
             MedicarePage.SelectSupplementPlanN();
             MedicarePage.CheckDentalLabel();
             MedicarePage.CheckDentalCheckBox();
+            MedicarePage.CheckMedicareYearAndAgeSpouse();
+            MedicarePage.selectYearAndLifeExpectancyAgeSpouse();
+            MedicarePage.chooseMagitierOptionSpouse();
+            MedicarePage.SelectSupplementPlanNSpouse();
+            MedicarePage.CheckDentalLabelSpouse();
+            MedicarePage.CheckDentalCheckBoxSpouse();
             PreMedicarePage.clickpremedicarepage();
             PreMedicarePage.clickpersonalpage();
             PreMedicarePage.clickpremedicarepage();
@@ -178,7 +184,7 @@ it('TC_FP_HealthExpense_11', () => {     //interactive calculations on the graph
         HealthExpensesPage.viewinteractivecalculationsonthegraph();
 
 })
-it('TC_FP_HealthExpense_11', () => {     //interactive calculations on the graph elements
+it('TC_FP_HealthExpense_12', () => {     //interactive calculations on the graph elements
         const HealthExpensesPage = new HealthExpenses();
         HealthExpensesPage.verifyviewexpense();
         HealthExpensesPage.setviewexpenseOptions();
@@ -194,7 +200,7 @@ it('TC_FP_HealthExpense_11', () => {     //interactive calculations on the graph
         HealthExpensesPage.checkmedicaredentalprimary();
       
 })
-it('TC_FP_HealthExpense_12', () => {     //Summary
+it('TC_FP_HealthExpense_13', () => {     //Summary
         const HealthExpensesPage = new HealthExpenses();
         HealthExpensesPage.verifyviewexpense();
         HealthExpensesPage.setviewexpenseOptions();
@@ -211,20 +217,20 @@ it('TC_FP_HealthExpense_12', () => {     //Summary
         HealthExpensesPage.Taxfilingstatusprimary();
       
 })
-it('TC_FP_HealthExpense_13', () => {     //Spouse
+it('TC_FP_HealthExpense_14', () => {     //Spouse
         const HealthExpensesPage = new HealthExpenses();
         HealthExpensesPage.verifyviewexpense();
         HealthExpensesPage.setviewexpenseOptions();
         HealthExpensesPage.selectviewexpensespouse();
 })
-it('TC_FP_HealthExpense_14', () => {     //verify view expense Spouse
+it('TC_FP_HealthExpense_15', () => {     //verify view expense Spouse
         const HealthExpensesPage = new HealthExpenses();
         HealthExpensesPage.verifyviewexpense();
         HealthExpensesPage.setviewexpenseOptions();
         HealthExpensesPage.selectviewexpensespouse();
         HealthExpensesPage.checkspousename();
 })
-it('TC_FP_HealthExpense_15', () => {     ////check presentvalue at retirement Spouse
+it('TC_FP_HealthExpense_16', () => {     ////check presentvalue at retirement Spouse
         const HealthExpensesPage = new HealthExpenses();
         HealthExpensesPage.verifyviewexpense();
         HealthExpensesPage.setviewexpenseOptions();
@@ -232,7 +238,7 @@ it('TC_FP_HealthExpense_15', () => {     ////check presentvalue at retirement Sp
         HealthExpensesPage.checkspousename();
         HealthExpensesPage.checkpresentvalueatretirementspouse();
 })
-it('TC_FP_HealthExpense_16', () => {     //total healthcare expense Spouse
+it('TC_FP_HealthExpense_17', () => {     //total healthcare expense Spouse
         const HealthExpensesPage = new HealthExpenses();
         HealthExpensesPage.verifyviewexpense();
         HealthExpensesPage.setviewexpenseOptions();
@@ -241,7 +247,7 @@ it('TC_FP_HealthExpense_16', () => {     //total healthcare expense Spouse
         //HealthExpensesPage.checkpresentvalueatretirementspouse();
         HealthExpensesPage.checktotalhealthcareexpensespouse();
 })
-it('TC_FP_HealthExpense_17', () => {     // //total selected expense Spouse
+it('TC_FP_HealthExpense_18', () => {     // //total selected expense Spouse
         const HealthExpensesPage = new HealthExpenses();
         HealthExpensesPage.verifyviewexpense();
         HealthExpensesPage.setviewexpenseOptions();
@@ -250,7 +256,7 @@ it('TC_FP_HealthExpense_17', () => {     // //total selected expense Spouse
         //HealthExpensesPage.checkpresentvalueatretirementspouse();
         HealthExpensesPage.checktotalselectedexpensespouse();
 })
-it('TC_FP_HealthExpense_18', () => {     //present value surcharge retirement Spouse
+it('TC_FP_HealthExpense_19', () => {     //present value surcharge retirement Spouse
         const HealthExpensesPage = new HealthExpenses();
         HealthExpensesPage.verifyviewexpense();
         HealthExpensesPage.setviewexpenseOptions();
@@ -259,7 +265,7 @@ it('TC_FP_HealthExpense_18', () => {     //present value surcharge retirement Sp
         //HealthExpensesPage.checkpresentvalueatretirementspouse();
         HealthExpensesPage.checkpresentvaluesurchargeretirementspouse();
 })
-it('TC_FP_HealthExpense_19', () => {     //total irmaa surcharge Spouse
+it('TC_FP_HealthExpense_20', () => {     //total irmaa surcharge Spouse
         const HealthExpensesPage = new HealthExpenses();
         HealthExpensesPage.verifyviewexpense();
         HealthExpensesPage.setviewexpenseOptions();
@@ -268,7 +274,7 @@ it('TC_FP_HealthExpense_19', () => {     //total irmaa surcharge Spouse
         //HealthExpensesPage.checkpresentvalueatretirementspouse();
         HealthExpensesPage.checktotalirmaasurchargespouse();
 })
-it('TC_FP_HealthExpense_20', () => {      //interactive calculations on the graph Spouse
+it('TC_FP_HealthExpense_21', () => {      //interactive calculations on the graph Spouse
         const HealthExpensesPage = new HealthExpenses();
         HealthExpensesPage.verifyviewexpense();
         HealthExpensesPage.setviewexpenseOptions();
@@ -283,7 +289,7 @@ it('TC_FP_HealthExpense_20', () => {      //interactive calculations on the grap
         HealthExpensesPage.checkmedicarepartdspouse();
         HealthExpensesPage.checkmedicaredentalspouse();
 })
-it('TC_FP_HealthExpense_21', () => {      //Summary Spouse
+it('TC_FP_HealthExpense_22', () => {      //Summary Spouse
         const HealthExpensesPage = new HealthExpenses();
         HealthExpensesPage.verifyviewexpense();
         HealthExpensesPage.setviewexpenseOptions();
