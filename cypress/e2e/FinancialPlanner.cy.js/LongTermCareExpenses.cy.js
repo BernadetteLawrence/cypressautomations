@@ -65,6 +65,11 @@ describe('LongTermCareExpenses', () => {
             MedicarePage.CheckPartACheckBox();
             MedicarePage.SelectDentalProfile();
             MedicarePage.CheckMedicareYearAndAgeSpouse();
+            MedicarePage.selectYearAndLifeExpectancyAgeSpouse();
+            MedicarePage.chooseMagitierOptionSpouse();
+            MedicarePage.SelectSupplementPlanNSpouse();
+            MedicarePage.CheckDentalLabelSpouse();
+            MedicarePage.CheckDentalCheckBoxSpouse();
             //MedicarePage.selectspouseYearAndLifeExpectancyAge();
             PreMedicarePage.clickpremedicarepage();
             PreMedicarePage.setplantypeoption();
