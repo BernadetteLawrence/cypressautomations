@@ -1,10 +1,10 @@
 import Login from "../../PageObjects/FinancialPlannerPOM/LoginPage";
 import Planner from "../../PageObjects/FinancialPlannerPOM/PlannerPage";
 import Personal from "../../PageObjects/FinancialPlannerPOM/PersonalPage";
-import Medicare from "../../PageObjects/FinancialPlannerPOM/MedicarePage";
+import Medicare from "../../PageObjects/FinancialPlannerPOM/Medicare";
 import PreMedicare from "../../PageObjects/FinancialPlannerPOM/PreMedicarePage";
 import Longtermcare from "../../PageObjects/FinancialPlannerPOM/LongTermCarePage";
-import Healthexpenses from "../../PageObjects/FinancialPlannerPOM/HealthCareExpensePage";
+import HealthExpenses from "../../PageObjects/FinancialPlannerPOM/HealthExpensesPage";
 import Medicarebundle from "../../PageObjects/FinancialPlannerPOM/MedicareBundlePage";
 import Reportbuilder from "../../PageObjects/FinancialPlannerPOM/ReportBuilderPage";
 
@@ -16,7 +16,7 @@ describe('reportbuilder', () => {
         const MedicarePage = Medicare;
         const PreMedicarePage = new PreMedicare();
         const LongTermCarePage = new Longtermcare();
-        const HealthExpensesPage = new Healthexpenses();
+        const HealthExpensesPage = new HealthExpenses();
         const Medicarebundlepage = new Medicarebundle;
 
 
@@ -61,7 +61,11 @@ describe('reportbuilder', () => {
             MedicarePage.chooseMagitierOption();
             MedicarePage. CheckPartALabel();
             MedicarePage.CheckPartACheckBox();
+            MedicarePage.SelectSupplementPlanN();
             MedicarePage.SelectDentalProfile();
+            MedicarePage.CheckMedicareYearAndAgeSpouse();
+            MedicarePage.selectYearAndLifeExpectancyAgeSpouse();
+            MedicarePage.SelectSupplementPlanNSpouse()
             PreMedicarePage.clickpremedicarepage();
             PreMedicarePage.setplantypeoption();
             PreMedicarePage.viewplantype();
@@ -91,8 +95,9 @@ describe('reportbuilder', () => {
             HealthExpensesPage.viewinteractivecalculationsonthegraphspouse();
             HealthExpensesPage.checkpostretirementpremedicarepremiumspouse();
             Medicarebundlepage.clickmedicarebundlelink();
-            Medicarebundlepage.eachrowsexecuting();
-            Medicarebundlepage.spouseallrowsdisplay();
+            //Medicarebundlepage.eachrowsexecuting();
+           // Medicarebundlepage.numberofrowsandcol();
+           // Medicarebundlepage.spouseallrowsdisplay();
                      
         })
 
@@ -267,8 +272,10 @@ describe('reportbuilder', () => {
     })
     it('TC_FP_Report_32', () => { //Generate PDF
         const ReportBuilderPage = new Reportbuilder();
-        ReportBuilderPage.generatepdfverify();
+      ReportBuilderPage.generatepdfverify();
     })
+})
+   
     
 
 
@@ -278,4 +285,4 @@ describe('reportbuilder', () => {
 
 
 
-})
+

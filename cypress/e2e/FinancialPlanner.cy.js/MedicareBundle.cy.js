@@ -1,10 +1,10 @@
 import Login from "../../PageObjects/FinancialPlannerPOM/LoginPage";
 import Planner from "../../PageObjects/FinancialPlannerPOM/PlannerPage";
 import Personal from "../../PageObjects/FinancialPlannerPOM/PersonalPage";
-import Medicare from "../../PageObjects/FinancialPlannerPOM/MedicarePage";
+import Medicare from "../../PageObjects/FinancialPlannerPOM/Medicare";
 import PreMedicare from "../../PageObjects/FinancialPlannerPOM/PreMedicarePage";
 import Longtermcare from "../../PageObjects/FinancialPlannerPOM/LongTermCarePage"; 
-import Healthexpenses from "../../PageObjects/FinancialPlannerPOM/HealthCareExpensePage";
+import HealthExpenses from "../../PageObjects/FinancialPlannerPOM/HealthExpensesPage";
 import Medicarebundle from "../../PageObjects/FinancialPlannerPOM/MedicareBundlePage";
 
 
@@ -16,7 +16,7 @@ describe('Medicarebundle', () => {
         const MedicarePage = Medicare;
         const PreMedicarePage = new PreMedicare();
         const LongTermCarePage = new Longtermcare();
-        const HealthExpensesPage = new Healthexpenses();
+        const HealthExpensesPage = new HealthExpenses();
 
 
 
@@ -60,9 +60,11 @@ describe('Medicarebundle', () => {
             MedicarePage.chooseMagitierOption();
             MedicarePage. CheckPartALabel();
             MedicarePage.CheckPartACheckBox();
+            MedicarePage.SelectSupplementPlanN();
             MedicarePage.SelectDentalProfile();
             MedicarePage.CheckMedicareYearAndAgeSpouse();
-            MedicarePage.selectspouseYearAndLifeExpectancyAge();
+            MedicarePage.selectYearAndLifeExpectancyAgeSpouse();
+            MedicarePage.SelectSupplementPlanNSpouse();
             PreMedicarePage.clickpremedicarepage();
             PreMedicarePage.setplantypeoption();
             PreMedicarePage.viewplantype();
