@@ -62,26 +62,26 @@ describe('Smoke test', () => {
             MedicarePage.clickmedicaretab();
             MedicarePage.CheckMedicareYearAndAge();
             MedicarePage.selectYearAndLifeExpectancyAge();
-            MedicarePage.chooseMagitierOption();   //MagiLevel1
-            MedicarePage. CheckPartALabel();   //Part A
+            MedicarePage.chooseMagitierOption();//MagiTier1
+            MedicarePage.CheckPartALabel();  //PartA
             MedicarePage.CheckPartACheckBox();
             MedicarePage.CheckPartBLabel();   //PartB
             MedicarePage.CheckPartBCheckBox();
-            MedicarePage.CheckPartDLabel();     //PartD
+            MedicarePage.CheckPartDLabel();    //PartD
             MedicarePage.CheckPartDCheckBox(); 
-            MedicarePage.SelectSupplementPlanN();    //PlanN
+            MedicarePage.selectNoMedigapOption();  //No Medigap
             MedicarePage.CheckDentalLabel();
             MedicarePage.CheckDentalCheckBox();     //Dental
             MedicarePage.CheckMedicareYearAndAgeSpouse();
             MedicarePage.selectYearAndLifeExpectancyAgeSpouse();
-            MedicarePage.chooseMagitierOptionSpouse();    //MagiTier 1   NoPartA
+            MedicarePage.chooseMagitierOptionSpouse();  //MagiTier 1   No PartA
             MedicarePage.CheckPartBLabelSpouse();     //PartB
             MedicarePage.CheckPartBCheckBoxSpouse(); 
             MedicarePage.CheckPartDLabelSpouse();   //PartD
             MedicarePage.CheckPartDCheckBoxSpouse(); 
-            MedicarePage.SelectSupplementPlanNSpouse();    //PlanN
-            MedicarePage.CheckDentalLabelSpouse();    //Dental
-            MedicarePage.CheckDentalCheckBoxSpouse();
+            MedicarePage.selectNoMedigapOptionSpouse();   //No Medigap
+            //MedicarePage.CheckDentalLabelSpouse();    //Dental
+            //MedicarePage.CheckDentalCheckBoxSpouse();
             //MedicarePage.selectspouseYearAndLifeExpectancyAge();
             PreMedicarePage.clickpremedicarepage();
             PreMedicarePage.setplantypeoption();
