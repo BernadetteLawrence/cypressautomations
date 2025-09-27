@@ -1,14 +1,13 @@
 import Login from "../../PageObjects/FinancialPlannerPOM/LoginPage";
 import Planner from "../../PageObjects/FinancialPlannerPOM/PlannerPage";
 import Personal from "../../PageObjects/FinancialPlannerPOM/PersonalPage";
-import Medicare from "../../PageObjects/FinancialPlannerPOM/Medicare";
+import Medicare from "../../PageObjects/FinancialPlannerPOM/MedicarePage";
 
 describe('Medicare', () => {
     const loginSetup = () => {
         const LoginPage = new Login();
         const PlannerPage = new Planner();
         const PersonalPage = new Personal();
-        //const Medicare = new Medicare();
 
         cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner');
         cy.fixture('FinancialPlanner').then((data) => {
@@ -129,54 +128,87 @@ it('TC_FP_MEDI_10', () => {  //choose magi tier option 1
     Medicare.chooseMagitierOption();
 }) 
 
+it.only('TC_FP_MEDI_11', () => {  //choose magi tier option 2
 
-it('TC_FP_MEDI_11', () => {  //Part A label and checkbox display
+    Medicare.landingmedicaretab();
+    Medicare.clickmedicaretab();
+    Medicare.chooseMagitierOptionPrimary2();
+})
+    
+it.only('TC_FP_MEDI_12', () => {  //choose magi tier option 3
+
+    Medicare.landingmedicaretab();
+    Medicare.clickmedicaretab();
+    Medicare.chooseMagitierOptionPrimary3();
+}) 
+
+it.only('TC_FP_MEDI_13', () => {  //choose magi tier option 4
+
+    Medicare.landingmedicaretab();
+    Medicare.clickmedicaretab();
+    Medicare.chooseMagitierOptionPrimary4();
+}) 
+
+it.only('TC_FP_MEDI_14', () => {  //choose magi tier option 5
+
+    Medicare.landingmedicaretab();
+    Medicare.clickmedicaretab();
+    Medicare.chooseMagitierOptionPrimary5();
+}) 
+    it.only('TC_FP_MEDI_15', () => {  //choose magi tier option 6
+
+    Medicare.landingmedicaretab();
+    Medicare.clickmedicaretab();
+    Medicare.chooseMagitierOptionPrimary6();
+}) 
+
+it('TC_FP_MEDI_16', () => {  //Part A label and checkbox display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckPartALabel();
     Medicare.CheckPartACheckBox();
 
 })
-it('TC_FP_MEDI_12', () => {  //Monthly premium for A display
+it('TC_FP_MEDI_17', () => {  //Monthly premium for A display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     //Medicare.CheckPartALabel();
    // Medicare.CheckPartACheckBox();
     Medicare.MonthlyPremiumforADisplay();
 })
-it('TC_FP_MEDI_13', () => {  //Part B label and checkbox display
+it('TC_FP_MEDI_18', () => {  //Part B label and checkbox display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckPartBLabel();
     Medicare.CheckPartBCheckBox();  
 })
 
-it('TC_FP_MEDI_14', () => {  //Monthly premium for B display
+it('TC_FP_MEDI_19', () => {  //Monthly premium for B display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.MonthlyPremiumforBDisplay();   
 })
 
-it('TC_FP_MEDI_15', () => {  //Part D label and checkbox display
+it('TC_FP_MEDI_20', () => {  //Part D label and checkbox display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckPartDLabel();
     Medicare.CheckPartDCheckBox();  
 })
 
-it('TC_FP_MEDI_16', () => {  //Monthly premium for D display
+it('TC_FP_MEDI_21', () => {  //Monthly premium for D display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.MonthlyPremiumforDDisplay();       
 })
 
-it('TC_FP_MEDI_17', () => {  //Annual OOP Cost for D display
+it('TC_FP_MEDI_22', () => {  //Annual OOP Cost for D display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.AnnualOOPCostForDDisplay();        
 })
 
-it('TC_FP_MEDI_18', () => {  //Supplement Plan (Medigap) label and dropdown display
+it('TC_FP_MEDI_23', () => {  //Supplement Plan (Medigap) label and dropdown display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckSupplementPlanLabel();
@@ -184,7 +216,7 @@ it('TC_FP_MEDI_18', () => {  //Supplement Plan (Medigap) label and dropdown disp
 })
 
 
-it('TC_FP_MEDI_19', () => {    //select No Medigap option 
+it('TC_FP_MEDI_24', () => {    //select No Medigap option 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckSupplementPlanLabel();
@@ -194,7 +226,7 @@ it('TC_FP_MEDI_19', () => {    //select No Medigap option
     
     cy.wait(1000);
 })
-it('TC_FP_MEDI_20', () => {  //Select Supplement Plan G  
+it('TC_FP_MEDI_25', () => {  //Select Supplement Plan G  
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckSupplementPlanLabel();
@@ -203,7 +235,7 @@ it('TC_FP_MEDI_20', () => {  //Select Supplement Plan G
     //Medicare.viewMonthlyPremiumforSupplementPlanGDisplay();
 
 })
-it('TC_FP_MEDI_21', () => {  //Select Supplement Plan G and verify Monthly premium for Supplement Plan G display
+it('TC_FP_MEDI_26', () => {  //Select Supplement Plan G and verify Monthly premium for Supplement Plan G display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckSupplementPlanLabel();
@@ -213,7 +245,7 @@ it('TC_FP_MEDI_21', () => {  //Select Supplement Plan G and verify Monthly premi
 
 })
 
-it('TC_FP_MEDI_22', () => {  //Select Supplement Plan N  
+it('TC_FP_MEDI_27', () => {  //Select Supplement Plan N  
 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
@@ -223,7 +255,7 @@ it('TC_FP_MEDI_22', () => {  //Select Supplement Plan N
     //Medicare.MonthlyPremiumforSupplementPlanNDisplay();     
     
 })
-it('TC_FP_MEDI_23', () => {  //Select Supplement Plan N and verify Monthly premium for Supplement Plan N display
+it('TC_FP_MEDI_28', () => {  //Select Supplement Plan N and verify Monthly premium for Supplement Plan N display
 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
@@ -233,32 +265,32 @@ it('TC_FP_MEDI_23', () => {  //Select Supplement Plan N and verify Monthly premi
     Medicare.MonthlyPremiumforSupplementPlanNDisplay();     
     
 }) 
-it('TC_FP_MEDI_24', () => {  //Dental label and checkbox display
+it('TC_FP_MEDI_29', () => {  //Dental label and checkbox display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckDentalLabel();
 });
 
-it('TC_FP_MEDI_25', () => {  //Dental checkbox
+it('TC_FP_MEDI_30', () => {  //Dental checkbox
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();    
     Medicare.CheckDentalCheckBox();
 });
 
-it('TC_FP_MEDI_26', () => {  //Dental dropdown display
+it('TC_FP_MEDI_31', () => {  //Dental dropdown display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckDentalLabel();
     Medicare.clickDentalDropDown();
 })
-it('TC_FP_MEDI_27', () => {  //Select Dental profile
+it('TC_FP_MEDI_32', () => {  //Select Dental profile
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckDentalLabel();
     Medicare.clickDentalDropDown();
     Medicare.SelectDentalProfile();
 });
-it('TC_FP_MEDI_28', () => {  //Verify Monthly premium for Dental display
+it('TC_FP_MEDI_33', () => {  //Verify Monthly premium for Dental display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckDentalLabel();
@@ -267,7 +299,7 @@ it('TC_FP_MEDI_28', () => {  //Verify Monthly premium for Dental display
     Medicare.viewMonthlyPremiumforDental();
 });
 
-it('TC_FP_MEDI_29', () => {  //Verify Co-Insurance for Dental display
+it('TC_FP_MEDI_34', () => {  //Verify Co-Insurance for Dental display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckDentalLabel();
@@ -276,7 +308,7 @@ it('TC_FP_MEDI_29', () => {  //Verify Co-Insurance for Dental display
     Medicare.viewCoInsuranceforDental();    
 });
 
-it('TC_FP_MEDI_30', () => {  //Verify Annual Max for Dental display
+it('TC_FP_MEDI_35', () => {  //Verify Annual Max for Dental display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckDentalLabel();
@@ -284,70 +316,70 @@ it('TC_FP_MEDI_30', () => {  //Verify Annual Max for Dental display
     Medicare.SelectDentalProfile();
     Medicare.viewAnnualMaxforDental();
 });
-it('TC_FP_MEDI_31', () => {  //Spouse  label display
+it('TC_FP_MEDI_36', () => {  //Spouse  label display
        
         Medicare.landingmedicaretab();
         Medicare.clickmedicaretab();
         Medicare.CheckSpouseLabel();
 });
-it('TC_FP_MEDI_32', () => {                //spouse name  display
+it('TC_FP_MEDI_37', () => {                //spouse name  display
        
         Medicare.landingmedicaretab();
         Medicare.clickmedicaretab();
         Medicare.checkSpouseNameDisplay();  
 });
- it('TC_FP_MEDI_33', () => {            //spouse medicare year and age display
+ it('TC_FP_MEDI_38', () => {            //spouse medicare year and age display
         Medicare.landingmedicaretab();
         Medicare.clickmedicaretab();
         Medicare.CheckMedicareYearAndAgeSpouse(); 
 });
 
-it('TC_FP_MEDI_34', () => {  //year and life expectancy age display
+it('TC_FP_MEDI_39', () => {  //year and life expectancy age display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.selectYearAndLifeExpectancyAgeSpouse();
 })
 
-it('TC_FP_MEDI_35', () => {  //Magi tier option Lenghth display
+it('TC_FP_MEDI_40', () => {  //Magi tier option Lenghth display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.verifymagitiernameSpouse();
     Medicare.LengthOfMagitierOptionSpouse();
 })
-it('TC_FP_MEDI_36', () => {  //choose magi tier option 1
+it('TC_FP_MEDI_41', () => {  //choose magi tier option 1
 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.chooseMagitierOptionSpouse();
 }) 
 
-it('TC_FP_MEDI_37', () => {  //choose magi tier option 2
+it('TC_FP_MEDI_42', () => {  //choose magi tier option 2
 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.chooseMagitierOptionSpouse2();
 }) 
-it('TC_FP_MEDI_38', () => {  //choose magi tier option 3
+it('TC_FP_MEDI_43', () => {  //choose magi tier option 3
 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.chooseMagitierOptionSpouse3();
 
 }) 
-it('TC_FP_MEDI_39', () => {  //choose magi tier option 4
+it('TC_FP_MEDI_44', () => {  //choose magi tier option 4
 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.chooseMagitierOptionSpouse4();
 
 }) 
-it('TC_FP_MEDI_40', () => {  //choose magi tier option 5
+it('TC_FP_MEDI_45', () => {  //choose magi tier option 5
 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.chooseMagitierOptionSpouse5();
 }) 
-it('TC_FP_MEDI_41', () => {  //choose magi tier option 6
+it('TC_FP_MEDI_46', () => {  //choose magi tier option 6
 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
@@ -355,53 +387,53 @@ it('TC_FP_MEDI_41', () => {  //choose magi tier option 6
 })
 
 
-it('TC_FP_MEDI_42', () => {  //Spouse Part A label and checkbox display
+it('TC_FP_MEDI_47', () => {  //Spouse Part A label and checkbox display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckSpousePartALabel();
     Medicare.CheckSpousePartACheckBox();
 })
 
-it('TC_FP_MEDI_43', () => {  //Monthly premium for A display
+it('TC_FP_MEDI_48', () => {  //Monthly premium for A display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.MonthlyPremiumforADisplaySpouse(); 
 });
-it.only('TC_FP_MEDI_44', () => {  //Spouse Part B label and checkbox display
+it('TC_FP_MEDI_49', () => {  //Spouse Part B label and checkbox display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckPartBLabelSpouse();
     Medicare.CheckPartBCheckBoxSpouse();  
 })
-it('TC_FP_MEDI_45', () => {  //Monthly premium for B display
+it('TC_FP_MEDI_50', () => {  //Monthly premium for B display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.MonthlyPremiumforBDisplaySpouse(); 
 });
-it('TC_FP_MEDI_46', () => {  //Spouse Part D label and checkbox display
+it('TC_FP_MEDI_51', () => {  //Spouse Part D label and checkbox display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckPartDLabelSpouse();
     Medicare.CheckPartDCheckBoxSpouse();  
 })
-it('TC_FP_MEDI_47', () => {  //Monthly premium for D display
+it('TC_FP_MEDI_52', () => {  //Monthly premium for D display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.MonthlyPremiumforDDisplaySpouse();       
 });
 
-it('TC_FP_MEDI_48', () => {  //Annual OOP Cost for D display
+it('TC_FP_MEDI_53', () => {  //Annual OOP Cost for D display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.AnnualOOPCostForDDisplaySpouse();        
 });
-it('TC_FP_MEDI_49', () => {  //Supplement Plan (Medigap) label and dropdown display
+it('TC_FP_MEDI_54', () => {  //Supplement Plan (Medigap) label and dropdown display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckSupplementPlanLabelSpouse();
     Medicare.clickSupplementPlanDropDownSpouse();   
 });
-it('TC_FP_MEDI_50', () => {    //select No Medigap option 
+it('TC_FP_MEDI_55', () => {    //select No Medigap option 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckSupplementPlanLabelSpouse();
@@ -409,7 +441,7 @@ it('TC_FP_MEDI_50', () => {    //select No Medigap option
     Medicare.selectNoMedigapOptionSpouse();
     cy.wait(1000);
 });
-it('TC_FP_MEDI_51', () => {  //Select Supplement Plan G  
+it('TC_FP_MEDI_56', () => {  //Select Supplement Plan G  
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckSupplementPlanLabelSpouse();
@@ -417,7 +449,7 @@ it('TC_FP_MEDI_51', () => {  //Select Supplement Plan G
     Medicare.SelectSupplementPlanGSpouse();
     
 });
-it('TC_FP_MEDI_52', () => {  //Select Supplement Plan G and verify Monthly premium for Supplement Plan G display
+it('TC_FP_MEDI_57', () => {  //Select Supplement Plan G and verify Monthly premium for Supplement Plan G display
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckSupplementPlanLabelSpouse();
@@ -425,7 +457,7 @@ it('TC_FP_MEDI_52', () => {  //Select Supplement Plan G and verify Monthly premi
     Medicare.SelectSupplementPlanGSpouse();
     Medicare.viewMonthlyPremiumforSupplementPlanGDisplaySpouse();
 });
-it('TC_FP_MEDI_53', () => {  //Select Supplement Plan N  
+it('TC_FP_MEDI_58', () => {  //Select Supplement Plan N  
 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
@@ -433,7 +465,7 @@ it('TC_FP_MEDI_53', () => {  //Select Supplement Plan N
     Medicare.clickSupplementPlanDropDownSpouse();
     Medicare.SelectSupplementPlanNSpouse();
 });
-it('TC_FP_MEDI_54', () => {  //Select Supplement Plan N and verify Monthly premium for Supplement Plan N display
+it('TC_FP_MEDI_59', () => {  //Select Supplement Plan N and verify Monthly premium for Supplement Plan N display
 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
@@ -444,31 +476,31 @@ it('TC_FP_MEDI_54', () => {  //Select Supplement Plan N and verify Monthly premi
 });
 
 
-it('TC_FP_MEDI_55', () => {  //Dental label and checkbox display for spouse
+it('TC_FP_MEDI_60', () => {  //Dental label and checkbox display for spouse
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckDentalLabelSpouse();
     Medicare.CheckDentalCheckBoxSpouse();
 });
-it('TC_FP_MEDI_56', () => {  //Dental checkbox for spouse
+it('TC_FP_MEDI_61', () => {  //Dental checkbox for spouse
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();    
     Medicare.CheckDentalCheckBoxSpouse();   
 });
-it('TC_FP_MEDI_57', () => {  //Dental dropdown display for spouse
+it('TC_FP_MEDI_62', () => {  //Dental dropdown display for spouse
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckDentalLabelSpouse();
     Medicare.clickDentalDropDownSpouse();   
 })
-it('TC_FP_MEDI_58', () => {  //Select Dental profile for spouse
+it('TC_FP_MEDI_63', () => {  //Select Dental profile for spouse
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckDentalLabelSpouse();
     Medicare.clickDentalDropDownSpouse();
     Medicare.SelectDentalProfileSpouse();
 });
-it('TC_FP_MEDI_59', () => {  //Verify Monthly premium for Dental display for spouse
+it('TC_FP_MEDI_64', () => {  //Verify Monthly premium for Dental display for spouse
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckDentalLabelSpouse();
@@ -476,7 +508,7 @@ it('TC_FP_MEDI_59', () => {  //Verify Monthly premium for Dental display for spo
     Medicare.SelectDentalProfileSpouse();
     Medicare.viewMonthlyPremiumforDentalSpouse();   
 });
-it('TC_FP_MEDI_60', () => {  //Verify Co-Insurance for Dental display for spouse
+it('TC_FP_MEDI_65', () => {  //Verify Co-Insurance for Dental display for spouse
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckDentalLabelSpouse();
@@ -484,7 +516,7 @@ it('TC_FP_MEDI_60', () => {  //Verify Co-Insurance for Dental display for spouse
     Medicare.SelectDentalProfileSpouse();
     Medicare.viewCoInsuranceforDentalSpouse();    
 });
-it('TC_FP_MEDI_61', () => {  //Verify Annual Max for Dental display for spouse
+it('TC_FP_MEDI_66', () => {  // Verify Annual Max for Dental display for spouse
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.CheckDentalLabelSpouse();
