@@ -196,6 +196,53 @@ LengthOfMagitierOption(magitieroption){
     cy.wait(1000) 
     } 
 
+    chooseMagitierOptionPrimary2(selectOption)
+    {
+        cy.get(this.MAGItier)
+        .select('2')
+    .should('have.value', '2')
+    cy.wait(1000) 
+    } 
+    chooseMagitierOptionPrimary3(selectOption)
+    {
+        cy.get(this.MAGItier)
+        .select('3')
+    .should('have.value', '3')
+    cy.wait(1000) 
+    } 
+    chooseMagitierOptionPrimary4(selectOption)
+    {
+        cy.get(this.MAGItier)
+        .select('4')
+    .should('have.value', '4')
+    cy.wait(1000) 
+    } 
+    chooseMagitierOptionPrimary5(selectOption)
+    {
+        cy.get(this.MAGItier)
+        .select('5')
+    .should('have.value', '5')
+    cy.wait(1000) 
+    } 
+    chooseMagitierOptionPrimary6(selectOption)
+    {
+        cy.get(this.MAGItier)
+        .select('6')
+    .should('have.value', '6')
+    cy.wait(1000) 
+    }   
+
+
+
+
+
+
+
+
+
+
+
+
 
   CheckPartALabel(partAlabel){
     cy.get(this.PartALabel)
