@@ -19,7 +19,7 @@ describe("Fund With Investment", () => {
       // Step 2: Planner Page
       const plannerPage = new Planner();
       cy.visit(data.Planner_Url);
-      plannerPage.setClient();
+      plannerPage.clickClient();
 
       // Step 3: Personal Page
       const personalPage = new Personal();
