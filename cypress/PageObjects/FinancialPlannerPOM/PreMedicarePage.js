@@ -42,9 +42,6 @@ class PreMedicare {
       .should('be.visible')
     cy.wait(2000)
   }
-
-
-
   settaxfilingprimary(taxfiling) {
     cy.get(this.taxfiling)
       .click()
