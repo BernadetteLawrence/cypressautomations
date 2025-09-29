@@ -1,4 +1,5 @@
 class LongTermCareExpenses {
+    
     longtermcareexpenseslinkEle="a[class='nav-link ui-link active']";
     primaryandnameEle="div[class='col-6'] h6:nth-child(1)";
     PrimaryTotalPresentValueExpensesEle="div[id='long_term_care_expenses'] div[class='row justify-content-center text-center mt-4 mb-3'] div:nth-child(1) h6:nth-child(1)";
