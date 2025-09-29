@@ -231,19 +231,6 @@ LengthOfMagitierOption(magitieroption){
     .should('have.value', '6')
     cy.wait(1000) 
     }   
-
-
-
-
-
-
-
-
-
-
-
-
-
   CheckPartALabel(partAlabel){
     cy.get(this.PartALabel)
     .should('exist');

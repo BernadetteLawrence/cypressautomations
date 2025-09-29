@@ -128,34 +128,34 @@ it('TC_FP_MEDI_10', () => {  //choose magi tier option 1
     Medicare.chooseMagitierOption();
 }) 
 
-it.only('TC_FP_MEDI_11', () => {  //choose magi tier option 2
+it('TC_FP_MEDI_11', () => {  //choose magi tier option 2
 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.chooseMagitierOptionPrimary2();
 })
     
-it.only('TC_FP_MEDI_12', () => {  //choose magi tier option 3
+it('TC_FP_MEDI_12', () => {  //choose magi tier option 3
 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.chooseMagitierOptionPrimary3();
 }) 
 
-it.only('TC_FP_MEDI_13', () => {  //choose magi tier option 4
+it('TC_FP_MEDI_13', () => {  //choose magi tier option 4
 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.chooseMagitierOptionPrimary4();
 }) 
 
-it.only('TC_FP_MEDI_14', () => {  //choose magi tier option 5
+it('TC_FP_MEDI_14', () => {  //choose magi tier option 5
 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
     Medicare.chooseMagitierOptionPrimary5();
 }) 
-    it.only('TC_FP_MEDI_15', () => {  //choose magi tier option 6
+    it('TC_FP_MEDI_15', () => {  //choose magi tier option 6
 
     Medicare.landingmedicaretab();
     Medicare.clickmedicaretab();
