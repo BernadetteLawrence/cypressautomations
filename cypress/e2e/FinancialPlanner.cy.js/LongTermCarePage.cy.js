@@ -240,12 +240,12 @@ describe('Longtermcare', () => {
     it('TC_FP_LongTermCare_25', () => {                 //spouseQualityofcare
         const LongTermCarePage = new Longtermcare();
         LongTermCarePage.setlongtermcare();
-        LongTermCarePage.checkspousequalityofcarename();      
+        LongTermCarePage.checkspousequalityofcareoption();      
      })
     it('TC_FP_LongTermCare_26', () => {               //spouseQualityofcareoption
         const LongTermCarePage = new Longtermcare();
         LongTermCarePage.setlongtermcare();
-        LongTermCarePage.verifyspousequalityofcareoption();      
+        LongTermCarePage.selectspousequalityofcareoption();      
      })
     it('TC_FP_LongTermCare_27', () => {                  //SelectspouseQualityofcare       
         const LongTermCarePage = new Longtermcare();
@@ -451,7 +451,7 @@ describe('Longtermcare', () => {
         LongTermCarePage.selectspouseinhomecareoption();
         LongTermCarePage.selectspousenursingcareoption();
         LongTermCarePage.clickcancelbutton();
-        LongTermCarePage.verifypopupmessage();
+        LongTermCarePage.verifycancelpopupmessage();
     })
     it('TC_FP_LongTermCare_46', () =>{               //RunAnalysis-'OK'
         const LongTermCarePage = new Longtermcare();
@@ -468,7 +468,7 @@ describe('Longtermcare', () => {
         LongTermCarePage.selectspouseinhomecareoption();
         LongTermCarePage.selectspousenursingcareoption();
         LongTermCarePage.clickcancelbutton();
-        LongTermCarePage.verifypopupmessage();
+        LongTermCarePage.verifycancelpopupmessage();
         LongTermCarePage.clickokbutton();
     })
     it('TC_FP_LongTermCare_47', () =>{               //RunAnalysis-'Cancel'
@@ -486,7 +486,7 @@ describe('Longtermcare', () => {
         LongTermCarePage.selectspouseinhomecareoption();
         LongTermCarePage.selectspousenursingcareoption();
         LongTermCarePage.clickcancelbutton();
-        LongTermCarePage.verifypopupmessage();
+        LongTermCarePage.verifycancelpopupmessage();
         LongTermCarePage.clickcancelbuttoninside();
     })
 

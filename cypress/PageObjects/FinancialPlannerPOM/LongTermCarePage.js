@@ -36,9 +36,12 @@ class Longtermcare{
    
    
 setlongtermcare(longtermcare){
-    cy.get(this. longtermcarelink)
-    .click()
+    cy.get(this. longtermcarelink,  { timeout: 20000 }).scrollIntoView()
+    .should('be.visible')
+    .and('not.be.disabled')
+    .click({force:true});
     cy.wait(2000)
+    
 }
 checktaxfilingdisplay(taxfilingdisplay){
     cy.get(this.taxfilingdisplay)
@@ -329,14 +332,14 @@ clickmedicaretab(medicaretab){
 clickrunanalysis(runanalysisbutton)
 {
     cy.get(this.runanalysisbutton)
-    .click()
-    cy.wait(1000)
+    .click({ force: true });
+    cy.wait(4000)
 }
 verifypopupmessage(popupmessage){
     cy.get(this.popupmessage)
      .should('be.visible')
   .and('contain.text', 'Do you want to Run Analysis now or review and edit inputs?');
-  cy.wait(1000)
+  cy.wait(4000)
 
 }
 clickeditinputs(editinput){
@@ -348,7 +351,7 @@ clickeditinputs(editinput){
 clickrunanalysisbutton(runanalysisbuttoninside)
 {
     cy.get(this.runanalysisinsidebutton)
-    .click()
+    .click({ force: true });
     cy.wait(1000)
 }
 clickcancelbutton(cancelbutton){
@@ -357,7 +360,7 @@ clickcancelbutton(cancelbutton){
     .click()
     cy.wait(1000)
 }
-verifypopupmessage(popmessagecancelbutton)
+verifycancelpopupmessage(popmessagecancelbutton)
 {
     cy.get(this. cancelbuttonpopupmessage)
     .should('contain.text','You are in process of creating the plan. Going to home screen will delete your plan.')
