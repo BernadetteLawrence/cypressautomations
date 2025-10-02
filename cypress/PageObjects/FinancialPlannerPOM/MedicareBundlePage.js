@@ -12,7 +12,7 @@ class Medicarebundle{
     spouseallrows="table[class='table table-bordered table-striped table-fixed-header OutputPSTable2nd']>tbody>tr";
     medicarecomponent="#healthcare_expenses_details_popup_div > .table > :nth-child(3) > .blankrow > .PSThead-noborder";
     clickmedicarebundlelink(){
-        cy.get(this.medicarebundlelink, { timeout: 10000 })
+        cy.get(this.medicarebundlelink,{ timeout: 10000 })
         .click({force:true})
         cy.wait(1000)
     }
@@ -51,6 +51,7 @@ class Medicarebundle{
     }
     eachrowsexecuting(){
         cy.get(this.allrows)
+        .should('be.visible')
         .each( ($row, index, $rows)=>{
             cy.wrap($row).within( ()=>{
                 cy.get("td").each( ($col, index, $cols )=>{
@@ -73,7 +74,8 @@ class Medicarebundle{
 
     }
     spouseallrowsdisplay(){
-        cy.get(this.spouseallrows).should('exist').each( ($row, index, $rows)=>{
+        cy.get(this.spouseallrows)
+        .each( ($row, index, $rows)=>{
             cy.wrap($row).within( ()=>{
                 cy.get("td").each( ($col, index, $cols )=>{
                     cy.log($col.text());
