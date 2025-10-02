@@ -6,6 +6,8 @@ import PreMedicare from "../../PageObjects/FinancialPlannerPOM/PreMedicarePage";
 import Longtermcare from "../../PageObjects/FinancialPlannerPOM/LongTermCarePage";
 import HealthExpenses from "../../PageObjects/FinancialPlannerPOM/HealthExpensesPage";
 import Medicarebundle from "../../PageObjects/FinancialPlannerPOM/MedicareBundlePage";
+import Fundwithinvestment from  "../../PageObjects/FinancialPlannerPOM/fundwithinvestment";
+import LongTermCareExpenses from "../../PageObjects/FinancialPlannerPOM/Longtermcareexpensespage";
 import Reportbuilder from "../../PageObjects/FinancialPlannerPOM/ReportBuilderPage";
 
 describe('reportbuilder', () => {
@@ -17,10 +19,9 @@ describe('reportbuilder', () => {
         const PreMedicarePage = new PreMedicare();
         const LongTermCarePage = new Longtermcare();
         const HealthExpensesPage = new HealthExpenses();
-        const Medicarebundlepage = new Medicarebundle;
-
-
-
+        const Medicarebundlepage = new Medicarebundle();
+        const LongTermCareExpense = new LongTermCareExpenses();
+        const fundwithinvestment = new Fundwithinvestment();
         cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner');
         cy.fixture('FinancialPlanner').then((data) => {
 
@@ -95,9 +96,11 @@ describe('reportbuilder', () => {
             HealthExpensesPage.viewinteractivecalculationsonthegraphspouse();
             HealthExpensesPage.checkpostretirementpremedicarepremiumspouse();
             Medicarebundlepage.clickmedicarebundlelink();
-            //Medicarebundlepage.eachrowsexecuting();
-           // Medicarebundlepage.numberofrowsandcol();
-           // Medicarebundlepage.spouseallrowsdisplay();
+           // Medicarebundlepage.eachrowsexecuting();
+            Medicarebundlepage.numberofrowsandcol();
+            Medicarebundlepage.spouseallrowsdisplay();
+            fundwithinvestment.fundWithInvestmentlinkClick();
+            LongTermCareExpense.clicklongtermcareexpenseslink();
                      
         })
 
