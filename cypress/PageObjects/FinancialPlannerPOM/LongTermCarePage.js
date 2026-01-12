@@ -37,7 +37,7 @@ class Longtermcare{
    
 setlongtermcare(longtermcare){
     cy.get(this. longtermcarelink)
-    .click()
+    .click({force:true})
     cy.wait(2000)
 }
 checktaxfilingdisplay(taxfilingdisplay){
@@ -329,12 +329,12 @@ clickmedicaretab(medicaretab){
 clickrunanalysis(runanalysisbutton)
 {
     cy.get(this.runanalysisbutton)
-    .click()
+    .click({force:true})
     cy.wait(1000)
 }
 verifypopupmessage(popupmessage){
-cy.get(this.popupmessage)
-  .should('be.visible')
+    cy.get(this.popupmessage)
+     .should('be.visible')
   .and('contain.text', 'Do you want to Run Analysis now or review and edit inputs?');
   cy.wait(1000)
 
@@ -348,7 +348,7 @@ clickeditinputs(editinput){
 clickrunanalysisbutton(runanalysisbuttoninside)
 {
     cy.get(this.runanalysisinsidebutton)
-    .click()
+    .click({force:true})
     cy.wait(1000)
 }
 clickcancelbutton(cancelbutton){
@@ -376,3 +376,4 @@ clickcancelbuttoninside(cancelbuttoninside){
 }
 export default Longtermcare;
 
+   

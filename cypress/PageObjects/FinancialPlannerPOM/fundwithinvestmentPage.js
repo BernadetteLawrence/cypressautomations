@@ -51,9 +51,43 @@ class FundWithInvestment {
   LifeExpectancyPrimaryEle =
     "body > div:nth-child(20) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3)";
   ViewExpensesOfSpouseEle =
-    "body > div:nth-child(20) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > select:nth-child(1)";
+    "body > div:nth-child(20) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2)";
+  // "select#healthcareExpensesType";
   SpouseNameEle =
     "body > div:nth-child(20) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2)";
+  PVforTotalHealthcareExpensesSpouseEle =
+    "div[class='col-lg-8 col-md-6'] div[class='fwi-label']";
+  AgeExpensesBeginSpouseEle =
+    "div[class='col-lg-4 col-md-6'] div[class='fwi-label']";
+  PercentageOfHealthcareGoalToFundSpouseEle =
+    "div[class='col-lg-5 col-md-12 include-spouse-cpbox fwi-topspce offset-lg-1 offset-md-0 pl-0 pr-0'] div[class='fwi-label']";
+  StepperFieldPercentageOfHealthcareGoalToFundSpouseEle =
+    "div[id='slider1'] div[class='ui-slider-range ui-corner-all ui-widget-header ui-slider-range-min']";
+  PVForExpensestoFundSpouseEle =
+    "div[class='col-lg-12 col-md-12 pl-0 pr-0'] div[class='row'] div:nth-child(1) div:nth-child(1)";
+  PVForExpensesnotFundedSpouseEle =
+    "div[class='col-lg-12 col-md-12 pl-0 pr-0'] div[class='row'] div:nth-child(2) div:nth-child(1)";
+  CurrentSavingsAllocatedToHealthcareSpouseEle =
+    "body > div:nth-child(20) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)";
+  InvestmentProfileDropdownSelectionSpouseEle =
+    "select#brokerage_details_investment_profile";
+  YearsToSaveSpouseEle = ".fwi-label.col-3";
+  YearsToSaveSliderSpouseEle =
+    "body > div:nth-child(20) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2)";
+  ResetYearsToSaveButtonSpouseEle = "#resetYearsToSaveBtn";
+  CalculateSavingsButtonSpouseEle =
+    "body > div:nth-child(20) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > div:nth-child(1)";
+  MonthlySavingsRequiredSpouseEle = "div[class='col-9'] div[class='fwi-label']";
+  AnnualSavingspouseEle = "label[for='AnnualSavingsChk']";
+  AnnualExpensesSpouseEle = "label[for='AnnualExpensesChk']";
+  YearendHealthcareSavingsBalanceSpouseEle = "label[for='YearendHSBalanceCsk']";
+  RetirementAgeSpouseEle =
+    "body > div:nth-child(20) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)";
+  MedicareEligibilityAgeSpouseEle =
+    "body > div:nth-child(20) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2)";
+  LifeExpectancySpouseEle =
+    "body > div:nth-child(20) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3)";
+
   PreMedicareEle = 'a[href="#preMedicare"]';
   LongTermCareEle = 'a[href="#longTerm"]';
   RunAnalysisEle = '[id="submitButtonShowPopupClick"]';
@@ -442,36 +476,216 @@ class FundWithInvestment {
 
     cy.wait(1000);
   }
-  selectviewexpenseSpouse() {
+  SelectviewexpenseSpouse() {
     // First ensure we're on the right section and element exists
-    cy.get(this.ViewExpensesOfSpouseEle)
+    cy.get(this.ViewExpensesOfPrimaryEle)
       .should("exist")
       .and("be.visible")
       .then(($el) => {
-        // Log for debugging
-        cy.log("Found ViewExpensesOfSpouse element:", $el);
-
-        // Ensure element is in view
-        $el[0].scrollIntoView();
-
         // Force visibility if needed
         if (!$el.is(":visible")) {
           cy.wrap($el).invoke("show");
         }
+        // Scroll element into view
+        $el[0].scrollIntoView();
+      })
+      .wait(1000) // Wait for any animations
+      .select("spouse")
+      .should("have.value", "spouse");
 
-        // Select Spouse and verify
-        cy.wrap($el)
-          .should("not.be.disabled")
-          .select("Spouse")
-          .should("have.value", "spouse");
-      });
-    cy.wait(4000);
+    cy.wait(2000);
+    cy.wait(15000);
   }
-  checkspousename() {
+  Checkspousename() {
     cy.get(this.SpouseNameEle)
       .should("be.visible")
       .and("contain.text", "Rose Peter");
+    cy.wait(10000);
+  }
+  VerifyPVforTotalHealthcareExpensesSpouse() {
+    cy.get(this.PVforTotalHealthcareExpensesSpouseEle)
+      .should("exist")
+      .and("be.visible")
+      .and("contain.text", "PV for Total Healthcare expenses");
     cy.wait(2000);
+  }
+  VerifyAgeExpensesBeginSpouse() {
+    cy.get(this.AgeExpensesBeginSpouseEle)
+      .should("exist")
+      .and("be.visible")
+      .and("contain.text", "Age Expenses Begin");
+    cy.wait(2000);
+  }
+  VerifyPercentageOfHealthcareGoalToFundSpouse() {
+    cy.get(this.PercentageOfHealthcareGoalToFundSpouseEle)
+      .should("exist")
+      .and("be.visible")
+      .and("contain.text", "% of Healthcare Goal to Fund");
+    cy.wait(2000);
+  }
+  VerifyStepperPercentageOfHealthcareGoalToFundSpouse() {
+    cy.get(this.StepperFieldPercentageOfHealthcareGoalToFundSpouseEle)
+      .should("exist")
+      .and("be.visible");
+    cy.wait(2000);
+  }
+  VerifyPVForExpensesToFundSpouse() {
+    cy.get(this.PVForExpensestoFundSpouseEle)
+      .should("exist")
+      .and("be.visible")
+      .and("contain.text", "PV for expenses to fund");
+    cy.wait(2000);
+  }
+  VerifyPVForExpensesnotFundedSpouse() {
+    cy.get(this.PVForExpensesnotFundedSpouseEle)
+      .should("exist")
+      .and("be.visible")
+      .and("contain.text", "PV for expenses not funded");
+    cy.wait(4000);
+  }
+  VerifyCurrentSavingsAllocatedToHealthcareSpouse() {
+    cy.get(this.CurrentSavingsAllocatedToHealthcareSpouseEle)
+      .should("exist")
+      .and("be.visible")
+      .and("contain.text", "Current Savings Allocated to Healthcare");
+    cy.wait(4000);
+  }
+  SelectModerateFromInvestmentProfileDropdownSpouse() {
+    cy.wait(2000);
+
+    // Use first() to ensure we're only working with one element
+    cy.get("select#brokerage_details_investment_profile")
+      .first()
+      .should("exist")
+      .and("be.visible")
+      .then(($dropdown) => {
+        // Log for debugging
+        cy.log("Found dropdown:", $dropdown.html());
+
+        // Find the Moderate option
+        const moderateOption = $dropdown
+          .find("option")
+          .filter((_, el) => el.textContent.includes("Moderate"))
+          .first();
+
+        // Select by value
+        cy.wrap($dropdown)
+          .select(moderateOption.val())
+          .should(($el) => {
+            const selectedText = $el.find(":selected").text();
+            expect(selectedText).to.include("Moderate");
+          });
+      });
+
+    cy.wait(2000);
+  }
+  verifyYearsToSaveSpouse() {
+    cy.get(this.YearsToSaveSpouseEle)
+      .should("exist")
+      .and("be.visible")
+      .and("contain.text", "Years to Save");
+    cy.wait(2000);
+  }
+  verifyYearsToSaveSliderSpouse() {
+    cy.get(this.YearsToSaveSliderSpouseEle).should("exist").and("be.visible");
+    cy.wait(4000);
+  }
+  verifyResetYearsToSaveButtonSpouse() {
+    cy.get(this.ResetYearsToSaveButtonSpouseEle)
+      .should("exist")
+      .and("be.visible");
+    cy.wait(2000);
+  }
+  verifyCalculateSavingsButtonSpouse() {
+    cy.get(this.CalculateSavingsButtonSpouseEle)
+      .should("exist")
+      .and("be.visible");
+    cy.wait(2000);
+  }
+  clickCalculateSavingsButtonSpouse() {
+    // First verify the button exists and is visible
+    cy.get(this.CalculateSavingsButtonSpouseEle)
+      .should("exist")
+      .and("be.visible")
+      .and("not.be.disabled")
+      .then(($btn) => {
+        // Scroll into view if needed
+        $btn[0].scrollIntoView();
+        // Click the button
+        cy.wrap($btn).click();
+        cy.wait(5000);
+      });
+  }
+  verifyMonthlySavingsRequiredSpouse() {
+    cy.get(this.MonthlySavingsRequiredSpouseEle)
+      .should("exist")
+      .and("be.visible")
+      .and("contain.text", "Monthly Savings Required");
+    cy.wait(4000);
+  }
+  VerifyAnnualSavingsSpouse() {
+    cy.get(this.AnnualSavingspouseEle)
+      .should("exist")
+      .and("be.visible")
+      .and("contain.text", "Annual Savings");
+    cy.wait(4000);
+  }
+  ClickCheckboxAnnualSavingsSpouse() {
+    cy.get(this.AnnualSavingspouseEle)
+      .should("exist")
+      .and("be.visible")
+      .click({ force: true });
+    cy.wait(4000);
+  }
+  VerifyAnnualExpensesSpouse() {
+    cy.get(this.AnnualExpensesSpouseEle)
+      .should("exist")
+      .and("be.visible")
+      .and("contain.text", "Annual Expenses");
+    cy.wait(4000);
+  }
+  ClickCheckboxAnnualExpensesSpouse() {
+    cy.get(this.AnnualExpensesSpouseEle)
+      .should("exist")
+      .and("be.visible")
+      .click({ force: true });
+    cy.wait(4000);
+  }
+  VerifyYearendHealthcareSavingsBalanceSpouse() {
+    cy.get(this.YearendHealthcareSavingsBalanceSpouseEle)
+      .should("exist")
+      .and("be.visible")
+      .and("contain.text", "Year-end Healthcare Savings Balance");
+    cy.wait(4000);
+  }
+  ClickCheckboxYearendHealthcareSavingsBalanceSpouse() {
+    cy.get(this.YearendHealthcareSavingsBalanceSpouseEle)
+      .should("exist")
+      .and("be.visible")
+      .click({ force: true });
+    cy.wait(4000);
+  }
+  VerifyRetirementAgeSpouse() {
+    cy.get(this.RetirementAgeSpouseEle)
+      .should("exist")
+      .and("be.visible")
+      .and("contain.text", "Retirement Age");
+    cy.wait(4000);
+  }
+
+  VerifyMedicareEligibilityAgeSpouse() {
+    cy.get(this.MedicareEligibilityAgeSpouseEle)
+      .should("exist")
+      .and("be.visible")
+      .and("contain.text", "Medicare Eligibility Age");
+    cy.wait(4000);
+  }
+  VerifyLifeExpectancySpouse() {
+    cy.get(this.LifeExpectancySpouseEle)
+      .should("exist")
+      .and("be.visible")
+      .and("contain.text", "Life Expectancy");
+    cy.wait(4000);
   }
 }
 export default FundWithInvestment;

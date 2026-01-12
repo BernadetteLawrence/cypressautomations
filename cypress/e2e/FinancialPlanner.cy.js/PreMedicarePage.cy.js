@@ -1,78 +1,79 @@
 import Login from "../../PageObjects/FinancialPlannerPOM/LoginPage";
 import Planner from "../../PageObjects/FinancialPlannerPOM/PlannerPage";
 import Personal from "../../PageObjects/FinancialPlannerPOM/PersonalPage";
-import Medicare from "../../PageObjects/FinancialPlannerPOM/Medicare";
+import Medicare from "../../PageObjects/FinancialPlannerPOM/MedicarePage";
 import PreMedicare from "../../PageObjects/FinancialPlannerPOM/PreMedicarePage";
 
 describe('PreMedicare', () => {
+
+    let testData;
+
+    before(() => {
+        cy.task('csv:parseFromDropbox').then((data) => {
+            testData = data;
+        });
+    });
+
+
     const loginSetup = () => {
         const LoginPage = new Login();
         const PlannerPage = new Planner();
         const PersonalPage = new Personal();
-<<<<<<< HEAD
-        const MedicarePage =  Medicare;
-=======
         const MedicarePage = Medicare;
 
 
         cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner');
-        cy.fixture('FinancialPlanner').then((data) => {
+        // cy.fixture('FinancialPlanner').then((data) => {
 
-            LoginPage.setEMailUserID("data.UserID");
-            LoginPage.setPassword("data.Password");
-            LoginPage.clickLogin();
-            PlannerPage.setClient();
-            PersonalPage.setClientEmail("data.ClientEmail");
-            PersonalPage.setFirstName("data.FirstName");
-            PersonalPage.setLastName("data.LastName");
-            PersonalPage.setGender("data.Gender");
-            PersonalPage.setMonthofBirth("data.MonthofBirth");
-            PersonalPage.setYearofBirth("data.YearofBirth");
-            PersonalPage.setHealthProfile("data.HealthProfile");
-            PersonalPage.setLifeExpectancy("data.LifeExpectancy");
-            PersonalPage.setTobaccoUser("data.TobaccoUser");
-            PersonalPage.setRetirementAge("data.RetirementAge");
-            PersonalPage.setCurrentZipCode("data.CurrentZipcode");
-            PersonalPage.setRetirementZipCode("data.RetirementZipcode");
-            PersonalPage.setTaxFilingStatus("data.TaxFilingStatus");
-            PersonalPage.clickIncludeSpouse("data.SpouseFirstName");
-            PersonalPage.setSpouseFirstName("SpouseLastName");
-            PersonalPage.setSpouseLastName("data.SpouseLastName");
-            PersonalPage.setSpouseGender("data.SpouseGender");
-            PersonalPage.setSpouseMonthofBirth("data.SpouseMonthofBirth");
-            PersonalPage.setSpouseYearofBirth("data.SpouseYearofBirth");
-            PersonalPage.setSpouseHealthProfile("data.SpouseHealthProfile");
-            PersonalPage.setSpouseLifeExpectancy("data.SpouseLifeExpectancy");
-            PersonalPage.setSpouseTobaccoUser("data.SpouseTobaccoUser");
-            PersonalPage.setSpouseRetirementAge("data.SpouseRetirementAge");
-            PersonalPage.setSpouseCurrentZipCode("data.SpouseCurrentZipcode");
-            PersonalPage.setSpouseRetirementZipCode("data.SpouseRetirementZipcode");
-            PersonalPage.clickMedicare(); // will click the Medicare tab
-            PersonalPage.setTaxfillingstatusAlert();
-            MedicarePage.clickmedicaretab();
-            MedicarePage.CheckMedicareYearAndAge();
-            MedicarePage.selectYearAndLifeExpectancyAge();
-            MedicarePage.chooseMagitierOption();
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-            MedicarePage.CheckPartALabel();
-            MedicarePage.CheckPartACheckBox();
-            MedicarePage.SelectDentalProfile();
-            MedicarePage.CheckMedicareYearAndAgeSpouse();
-            MedicarePage.selectspouseYearAndLifeExpectancyAge();
+        LoginPage.setEMailUserID(testData.UserID);
+        LoginPage.setPassword(testData.Password);
+        LoginPage.clickLogin();
+        PlannerPage.setClient();
+        PersonalPage.setClientEmail(testData.ClientEmail);
+        PersonalPage.setFirstName(testData.FirstName);
+        PersonalPage.setLastName(testData.LastName);
+        PersonalPage.setGender(testData.Gender);
+        PersonalPage.setMonthofBirth(testData.MonthofBirth);
+        PersonalPage.setYearofBirth(testData.YearofBirth);
+        PersonalPage.setHealthProfile(testData.HealthProfile);
+        PersonalPage.setLifeExpectancy(testData.LifeExpectancy);
+        PersonalPage.setTobaccoUser(testData.TobaccoUser);
+        PersonalPage.setRetirementAge(testData.RetirementAge);
+        PersonalPage.setCurrentZipCode(testData.CurrentZipcode);
+        PersonalPage.setRetirementZipCode(testData.RetirementZipcode);
+        PersonalPage.setTaxFilingStatus(testData.TaxFilingStatus);
+        PersonalPage.clickIncludeSpouse();
+        PersonalPage.setSpouseFirstName(testData.SpouseFirstName);
+        PersonalPage.setSpouseLastName(testData.SpouseLastName);
+        PersonalPage.setSpouseGender(testData.SpouseGender);
+        PersonalPage.setSpouseMonthofBirth(testData.SpouseMonthofBirth);
+        PersonalPage.setSpouseYearofBirth(testData.SpouseYearofBirth);
+        PersonalPage.setSpouseHealthProfile(testData.SpouseHealthProfile);
+        PersonalPage.setSpouseLifeExpectancy(testData.SpouseLifeExpectancy);
+        PersonalPage.setSpouseTobaccoUser(testData.SpouseTobaccoUser);
+        PersonalPage.setSpouseRetirementAge(testData.SpouseRetirementAge);
+        PersonalPage.setSpouseCurrentZipCode(testData.SpouseCurrentZipcode);
+        PersonalPage.setSpouseRetirementZipCode(testData.SpouseRetirementZipcode);
+        PersonalPage.clickMedicare(); // will click the Medicare tab
+        PersonalPage.setTaxfillingstatusAlert();
+        MedicarePage.clickmedicaretab();
+        MedicarePage.CheckMedicareYearAndAge();
+        MedicarePage.selectYearAndLifeExpectancyAge();
+        MedicarePage.chooseMagitierOption();
+        MedicarePage.CheckPartALabel();
+        MedicarePage.CheckPartACheckBox();
+        MedicarePage.SelectDentalProfile();
+        MedicarePage.CheckMedicareYearAndAgeSpouse();
+        MedicarePage.selectYearAndLifeExpectancyAgeSpouse();
 
-          
->>>>>>> 489890904e988a6881706c2ad178d51182d66e46
->>>>>>> bbbf34f772b3ddfa7bbbbd9e36bce6db5cf04910
-            // cy.url().should('not.include', '/login');
 
-        })
+        // cy.url().should('not.include', '/login');
+
+
 
 
     }
-    beforeEach(() => {
+    beforeEach(function () {
         // Create/restore the session before each test
         cy.session('login', loginSetup, {
             validate: () => {
@@ -80,14 +81,18 @@ describe('PreMedicare', () => {
             }
         });
         cy.visit('https://publicplan.aivante.net/New_FP/Dzee/financial_planner/planner#create_new_plan');
+
+        
     });
 
-    it('TC_FP_PRE-MEDI_01', () => { //pre-medicare landing
+    it('TC_FP_PRE-MEDI_01', () => { //pre-medicare landing  
+
         const PreMedicarePage = new PreMedicare();
         PreMedicarePage.clickpremedicarepage();
-
     })
     it('TC_FP_PRE-MEDI_02', () => { //check text contain pre-medicare
+
+
         const PreMedicarePage = new PreMedicare();
         PreMedicarePage.clickpremedicarepage();
 
