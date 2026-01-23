@@ -2,9 +2,15 @@
   "devDependencies": {
     "@types/cypress": "^0.1.6",
     "@types/node": "^24.1.0",
+    "axios": "^1.13.2",
     "cypress": "^14.5.3",
     "cypress-file-upload": "^5.0.8",
+    "cypress-grep": "^3.0.4",
     "cypress-xpath": "^2.0.1",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.0",
+    "mochawesome-report-generator": "^6.3.2",
+    "neat-csv": "^7.0.0",
     "xlsx": "^0.18.5"
   },
   "name": "cypressautomation",
@@ -129,6 +135,7 @@
     "onetime": "^5.1.2",
     "ospath": "^1.2.2",
     "p-map": "^4.0.0",
+    "papaparse": "^5.5.3",
     "path-key": "^3.1.1",
     "pend": "^1.2.0",
     "performance-now": "^2.1.0",
