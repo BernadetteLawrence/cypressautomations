@@ -24,7 +24,7 @@ class FundWithInvestment {
   AtRetirementEle = "div[class='col-lg-12 mb-4 pl-0 pr-0']";
 
   PVForExpensestoFundEle =
-    "div[class='col-lg-12 col-md-12 pl-0 pr-0'] div[class='row'] div:nth-child(1) div:nth-child(1)";
+    "//h6[normalize-space()='Present Value At Retirement']";
   PVForExpensesnotFundedEle =
     "div[class='col-lg-12 col-md-12 pl-0 pr-0'] div[class='row'] div:nth-child(2) div:nth-child(1)";
 
@@ -64,7 +64,7 @@ class FundWithInvestment {
   StepperFieldPercentageOfHealthcareGoalToFundSpouseEle =
     "div[id='slider1'] div[class='ui-slider-range ui-corner-all ui-widget-header ui-slider-range-min']";
   PVForExpensestoFundSpouseEle =
-    "div[class='col-lg-12 col-md-12 pl-0 pr-0'] div[class='row'] div:nth-child(1) div:nth-child(1)";
+    "//h6[normalize-space()='Present Value At Retirement']";
   PVForExpensesnotFundedSpouseEle =
     "div[class='col-lg-12 col-md-12 pl-0 pr-0'] div[class='row'] div:nth-child(2) div:nth-child(1)";
   CurrentSavingsAllocatedToHealthcareSpouseEle =
@@ -97,7 +97,7 @@ class FundWithInvestment {
   ActiveFundWithInvestmentEle = '//a[@class="nav-link ui-link active"]';
   //'//a[@class="nav-link ui-link active" and @href="#FundWithInvestment"]';
 
-  FundWithInvestmentEle = "a[class='nav-link ui-link active']";
+  FundWithInvestmentEle = 'ul.nav.nav-tabs.planoutput-nav a.nav-link[href="#FundWithInvestment"]'//'a.nav-link.ui-link.active';
 
   clickHealthcareExpensesEle() {
     cy.get(this.HealthcareExpensesEle).first().click();
@@ -148,11 +148,13 @@ class FundWithInvestment {
       .should("not.have.class", "disabledAnchorTag")
       .first()
       .click();
-    cy.wait(5000);
+    cy.wait(4000);
   }
   fundWithInvestmentlinkClick(){
-    cy.get(this.FundWithInvestmentEle)
-      .click({force:true});
+    cy.get(this.FundWithInvestmentEle).filter(':visible')                          // ignore hidden clone
+        .should('have.length', 1)
+      .click();
+      cy.wait(4000)
   }
   verifyViewExpensesOf() {
     cy.get(this.ViewExpensesOfEle)

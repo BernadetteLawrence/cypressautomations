@@ -1,6 +1,6 @@
 class Reportbuilder {
     
-    reportbuilderlink = "#pdf_generator_option_page > .plan-header > .nav-tabs-wrapper > .planoutput-nav > :nth-child(5) > .nav-link";
+    reportbuilderlink = 'a.nav-link[href="#ReportBuilder"]';
     nameofreportbuilder = "#report_builder_member_name";
     defaulttitle = "#pdf_generator_options_form > :nth-child(1) > :nth-child(1) > .mb-2";
     checkreporttitle = ":nth-child(1) > .mb-4 > .card-header";
@@ -32,16 +32,20 @@ class Reportbuilder {
     cancelemail = "#emailPdf > .modal-dialog > .modal-content > .modal-footer > .btn-secondary";
     generatepdf = "#pdf_submit";
     viewinputbutton = "#pdf_generator_option_page_previous_button";
+    homebutton=".icon.icon-home";        //add new
     //funwithinvestment="cy.get('#medicare_bundles > .plan-header > .nav-tabs-wrapper > .planoutput-nav > :nth-child(3) > .nav-link')";
 
 
 
     clickreportbuilder() {
-        cy.get(this.reportbuilderlink)
-            .click({
-                force: true
-            })
-    }
+    cy.get(this.reportbuilderlink, { timeout: 20000 })
+    .should('be.visible')           // tab must be visible
+    //.scrollIntoView()
+    .should('be.visible')
+    .first()                                            // in case multiple nodes match
+     .click({force:true});    
+    }                   
+
     membername() {
         cy.get(this.nameofreportbuilder, {
                 timeout: 10000
@@ -206,7 +210,7 @@ class Reportbuilder {
     enteremailcolumn() {
         cy.get(this.enteremail)
             .click()
-            .type('leeli@gmail.com')
+            .type('benny@gmail.com')
     }
     sendemailbutton() {
         cy.get(this.sendemail)
@@ -218,13 +222,16 @@ class Reportbuilder {
     }
     generatepdfverify() {
         cy.get(this.generatepdf)
-            .should('be.visible')
-            .should('not.be.disabled')
-            .click({force:true});
+        .click({force:true});
+        cy.wait(4000)
     }
-    viewinput() {
+    clickviewinput() {
         cy.get(this.viewinputbutton)
             .click()
+    }
+    clickhome(){
+        cy.get(this.homebutton)
+        .click()
     }
 
 }

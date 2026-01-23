@@ -33,6 +33,7 @@ class Longtermcare{
     cancelcancelbutton="#create_plan_delete_confirm_popup_cancel_button";
     premedicarelink="#pre_medicare_collapsible_div";
     Medicarelink='a[href="#medicare"]';
+    homebutton=".icon.icon-home";        //add new
    
    
 setlongtermcare(longtermcare){
@@ -376,6 +377,10 @@ clickcancelbuttoninside(cancelbuttoninside){
     .click()
     cy.wait(1000)
 }
+clickhome(){
+        cy.get(this.homebutton)
+        .click()
+    }
 }
 export default Longtermcare;
 

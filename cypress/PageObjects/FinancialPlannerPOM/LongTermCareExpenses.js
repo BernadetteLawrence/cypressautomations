@@ -1,6 +1,6 @@
 class LongTermCareExpenses {
     
-    longtermcareexpenseslinkEle="a[class='nav-link ui-link active']";
+    longtermcareexpenseslinkEle='a.nav-link.ui-link.active';
     primaryandnameEle="div[class='col-6'] h6:nth-child(1)";
     PrimaryTotalPresentValueExpensesEle="div[id='long_term_care_expenses'] div[class='row justify-content-center text-center mt-4 mb-3'] div:nth-child(1) h6:nth-child(1)";
     PrimaryTotalFutureValueExpensesEle="div[id='long_term_care_expenses'] div[class='row justify-content-center text-center mt-4 mb-3'] div:nth-child(1) h6:nth-child(1)";
@@ -38,8 +38,14 @@ class LongTermCareExpenses {
     return cy.get(this.panel).find('svg').eq(idx);
   }
     clicklongtermcareexpenseslink(longtermcareexpenseslink){
-        cy.get(this.longtermcareexpenseslinkEle)
+        cy.get('ul.nav.nav-tabs.planoutput-nav')       // scope to THIS tab strip
+        .find('a.nav-link[href="#LongTermCareExpenses"]')
+        .filter(':visible')                          // ignore hidden clone
+        .should('have.length', 1)
+        .scrollIntoView()
         .click();
+
+        cy.get('#LongTermCareExpenses, #long_term_care_expenses').should('be.visible');
         cy.wait(4000)
     }
     viewprimaryandname(primaryandname){

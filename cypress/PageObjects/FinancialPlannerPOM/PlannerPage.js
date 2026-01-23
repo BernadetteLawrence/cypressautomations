@@ -57,38 +57,69 @@ this.editSpouseRetirementAgeEle='#spousecreate_new_plan_retirement_age'
 this.editSpouseCurrentZipCodeEle='#spousecreate_new_plan_current_zip_code'
 this.editSpouseRetirementZipCodeEle='#spousecreate_new_plan_zip_code'
 this.editMedicareEle='.nav-link.medicareInfoDisableClass.ui-link'
+this.editchoosecheckbox="label[for^='checkbox-AiVantePlan-']" //added new
+//this.editchooseonecheckbox="table tbody input[type='checkbox'][id^='checkbox-AiVanteplan-']"
 //this.editTaxfillingstatusAlertEle='#planstarusOK';
 
   }
   waitForLoad() {
     cy.get(this.ClientEle, { timeout: 20000 }).should('be.visible');
+    cy.wait(2000);
   }
   typeSearch(value) {
-    cy.get(this.SearchEle).should('be.visible').clear().type('newteamfp@gmail.com').click();
+    cy.get(this.SearchEle).should('be.visible').clear().type('auto1@gmail.com').click();
+    cy.wait(4000);
   }
 
   clickCompare() {
     cy.get(this.CompareEle).should('be.visible').click();
-    cy.wait(2000);
+    cy.wait(4000);
   }
-  setClient() {
-    cy.get(this.ClientEle).should('be.visible').click();
+  clickonecheckbox() {
+  cy.get(this.editchoosecheckbox).then($els => cy.log('list checkboxes:', $els.length));
+
+  cy.get(this.editchoosecheckbox)
+    .filter(':visible')
+    .should('have.length.at.least', 1)
+    .first()
+    .scrollIntoView()
+    .click({ force: true })              // click the LABEL
+    .invoke('attr', 'for')               // read the paired input id
+    .then((id) => {
+      cy.get(`[id="${id}"]`)             // <-- changed from #${id} to [id="..."]
+        .should('be.checked');           // assert the INPUT is checked
+    });
+
+    cy.wait(4000);
+    }
+   clickcheckbox(){                             //added new
+    cy.get(this.editchoosecheckbox).eq(0).scrollIntoView().click({ force: true }); //takes 0 index
+    cy.get(this.editchoosecheckbox).eq(2).scrollIntoView().click({ force: true });
+    cy.wait(4000);
+  }
+  /*checkcompareplandetails(){   //added new
+    cy.get(this.editcompareplandetails).should('be.visible').click().should('have.text', 'Compare Plan');
     cy.wait(2000);
+  }*/
+  setClient() {
+    cy.get(this.ClientEle).should('be.visible').click({force:true});
+    cy.wait(4000);
   }
   clickHome()  {
     cy.get(this.HomeEle).should('be.visible').click();
+     cy.wait(4000);
   }
   clickHelpIcon()  {
     cy.get(this.HelpIconEle).should('be.visible').click();
-    cy.wait(2000);
+    cy.wait(4000);
   }
   clickSetting()  {
     cy.get(this.SettingEle).should('be.visible').click();
-    cy.wait(2000);
+    cy.wait(4000);
   }
   clickChangePassword()  {
     cy.get(this.ChangePasswordEle).should('be.visible').click();
-    cy.wait(2000);
+    cy.wait(4000);
   }
   clickEditProfile()  {
     cy.get(this.EditProfileEle).should('be.visible').click();
@@ -99,7 +130,7 @@ this.editMedicareEle='.nav-link.medicareInfoDisableClass.ui-link'
     cy.wait(2000);
 }
 clickExpandPlan()  {
-    cy.get(this.ExpandPlanEle).should('be.visible').click();
+    cy.get(this.ExpandPlanEle).should('be.visible').click({force:true});
     cy.wait(2000);
 }
 clickCollapsePlan()  {
